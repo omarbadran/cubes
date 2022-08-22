@@ -1,0 +1,13 @@
+{
+  "name": "@cubes/tsrun",
+  "version": "0.0.1",
+  "type": "module",
+  "packageManager": "yarn@3.2.2",
+  "bin": "./bin/",
+  "peerDependencies": {
+    "esbuild": "^0.15.5"
+  },
+  "dependencies": {
+    "yargs": "^17.5.1"
+  }
+}
