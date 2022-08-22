@@ -1,12 +1,12 @@
 {
-	"name": "cubes",
-	"packageManager": "yarn@3.2.2",
-	"workspaces": [
-		"packages/apps/*",
-		"packages/modules/*"
-	],
-	"devDependencies": {
-		"prettier": "^2.7.1",
-		"typescript": "^4.7.4"
-	}
+  "name": "cubes",
+  "packageManager": "yarn@3.2.2",
+  "workspaces": [
+    "packages/apps/*",
+    "packages/modules/*"
+  ],
+  "devDependencies": {
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4"
+  }
 }
