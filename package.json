@@ -1,0 +1,11 @@
+{
+  "name": "cubes",
+  "packageManager": "yarn@3.2.2",
+  "workspaces": [
+    "packages/apps/*",
+    "packages/modules/*"
+  ],
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
+}
