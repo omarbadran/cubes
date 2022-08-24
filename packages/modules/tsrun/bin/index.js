@@ -4,10 +4,11 @@ import path from 'path';
 import esbuild from 'esbuild';
 import { spawn } from 'child_process';
 import { cwd, versions, env } from 'process';
-import { rmSync } from 'fs';
+import fs from 'fs';
+
+import { getConfig, getTempDir, importMetaPlugin } from './utils.js';
 
 import cli from './cli.js';
-import { getConfig, getTempDir } from './utils.js';
 
 const args = cli();
 
@@ -29,6 +30,10 @@ let buildOptions = {
   sourcesContent: false,
   treeShaking: true,
   outfile: path.join(tmpdir, 'index.mjs'),
+  plugins: [importMetaPlugin()],
+  banner: {
+    js: "import { createRequire } from 'module';const require = createRequire(import.meta.url);"
+  },
   ...config
 };
 
@@ -37,7 +42,7 @@ const clean = async () => {
     stop();
   }
 
-  return rmSync(tmpdir, {
+  return fs.rmSync(tmpdir, {
     recursive: true,
     maxRetries: 3,
     force: true
@@ -66,7 +71,7 @@ const run = async () => {
     child.kill('SIGKILL');
   }
 
-  child = spawn('node', ['--enable-source-maps', buildOptions.outfile], {
+  child = spawn('node', ['--enable-source-maps', buildOptions.outfile, args['a']], {
     stdio: 'inherit',
     cwd: cwd(),
     env

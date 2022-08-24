@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { tmpdir } from 'os';
+import { pathToFileURL } from 'url';
 
 export const getConfig = (dir, filename) => {
   let config = {};
@@ -26,3 +27,26 @@ export const getConfig = (dir, filename) => {
 };
 
 export const getTempDir = () => fs.mkdtempSync(tmpdir() + path.sep);
+
+export const importMetaPlugin = (options) => {
+  const filter = options?.filter ?? /\.[jt]s$/;
+
+  return {
+    name: 'replace-import-meta',
+    setup({ onLoad }) {
+      onLoad({ filter }, async (args) => {
+        const contents = fs.readFileSync(args.path, 'utf8');
+        const import_meta_url = JSON.stringify(pathToFileURL(args.path).href);
+        const import_meta = JSON.stringify({ url: import_meta_url });
+        return {
+          loader: 'default',
+          contents: contents
+            .replace(/\bimport\.meta\b/g, import_meta)
+            .replace(/\bimport\.meta\.url\b/g, import_meta_url)
+            .replace(/\b__dirname\b/g, JSON.stringify(path.dirname(args.path)))
+            .replace(/\b__filename\b/g, JSON.stringify(args.path))
+        };
+      });
+    }
+  };
+};

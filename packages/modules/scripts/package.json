@@ -1,0 +1,7 @@
+{
+  "name": "@cubes/scripts",
+  "version": "0.0.1",
+  "type": "module",
+  "packageManager": "yarn@3.2.2",
+  "private": true
+}

@@ -6,10 +6,15 @@
     "packages/modules/*"
   ],
   "scripts": {
-    "format": "prettier --check packages/**/*.ts --write"
+    "newpkg": "tsrun -f packages/modules/scripts/src/create-package.ts",
+    "format": "prettier --check packages/**/*.{ts,tsx,js,json,md,yml} --write"
   },
   "devDependencies": {
+    "@types/node": "^18.7.9",
     "prettier": "^2.7.1",
     "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "@cubes/tsrun": "workspace:*"
   }
 }

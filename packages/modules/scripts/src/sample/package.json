@@ -1,12 +1,15 @@
 {
-  "name": "@cubes/droplet",
+  "name": "@cubes/{{name}}",
   "version": "0.0.1",
   "type": "module",
-  "packageManager": "yarn@3.2.2",
+  "private": true,
+  "input": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/types/index.d.ts",
   "scripts": {
-    "prebuild": "yarn typings && yarn clean",
-    "build": "yarn prebuild && esbuild ./src/**/* --outdir=dist --minify",
+    "build": "esbuild ./src/**/* --outdir=dist",
     "build:node": "yarn build --platform=node --format=esm",
+    "build:browser": "yarn build --minify",
     "clean": "rimraf coverage dist tmp",
     "start": "tsrun -f src/index.ts",
     "dev": "yarn start -w",
@@ -14,12 +17,11 @@
     "test": "tsrun -f tests/all.test.ts"
   },
   "dependencies": {
-    "@cubes/tsrun": "workspace:*",
-    "@tinyhttp/app": "^2.0.22",
-    "rimraf": "^3.0.2"
+    "@cubes/tsrun": "workspace:*"
   },
   "devDependencies": {
     "esbuild": "^0.15.5",
-    "typescript": "^4.7.4"
+    "typescript": "^4.7.4",
+    "rimraf": "^3.0.2"
   }
 }

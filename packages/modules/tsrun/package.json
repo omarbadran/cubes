@@ -3,11 +3,10 @@
   "version": "0.0.1",
   "type": "module",
   "packageManager": "yarn@3.2.2",
+  "private": true,
   "bin": "./bin/",
-  "peerDependencies": {
-    "esbuild": "^0.15.5"
-  },
   "dependencies": {
+    "esbuild": "^0.15.5",
     "yargs": "^17.5.1"
   }
 }

@@ -1,0 +1,13 @@
+*.log
+.DS_Store
+node_modules
+.env
+dist
+.dist
+.cache
+build
+**/build
+yarn-error.log
+build.log
+build-error.log
+yarn.build-error.log

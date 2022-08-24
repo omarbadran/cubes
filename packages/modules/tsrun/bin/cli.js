@@ -28,6 +28,15 @@ export default () => {
     requiresArg: true
   });
 
+  y.option('passArgs', {
+    alias: 'a',
+    type: 'string',
+    default: '',
+    describe: 'Pass any arugments to the file being executed.',
+    demandOption: false,
+    requiresArg: true
+  });
+
   y.help();
 
   return y.argv;
