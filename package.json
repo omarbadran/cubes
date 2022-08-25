@@ -1,6 +1,7 @@
 {
   "name": "cubes",
   "packageManager": "yarn@3.2.2",
+  "author": "Omar Badran",
   "workspaces": [
     "packages/sdk/*",
     "packages/apps/*",
