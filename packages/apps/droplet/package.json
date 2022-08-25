@@ -6,23 +6,32 @@
   "input": "src/index.ts",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist/**"
+  ],
   "scripts": {
-    "build": "yarn clean & tsc",
+    "build": "yarn clean && tsc --build",
     "clean": "rimraf coverage dist tmp",
     "start": "yarn build && node dist/index.js",
-    "dev": "tsc-watch --onSuccess 'node ./dist/index.js'",
+    "dev": "tsc-watch --build --onSuccess 'node ./dist/index.js'",
     "test": "tsr -f tests/all.test.ts"
   },
   "packageManager": "yarn@3.2.2",
   "dependencies": {
-    "@cubes/tsr": "workspace:*",
+    "@cubes/crypto": "workspace:*",
     "@tinyhttp/app": "^2.0.22",
     "@tinyhttp/cors": "^2.0.0",
+    "jose": "^4.9.0",
+    "multiformats": "^9.7.1",
     "tiny-glob": "^0.2.9"
   },
   "devDependencies": {
+    "@cubes/tsr": "workspace:*",
     "rimraf": "^3.0.2",
     "tsc-watch": "^5.0.3",
     "typescript": "^4.7.4"
+  },
+  "engines": {
+    "node": "18.x"
   }
 }

@@ -601,6 +601,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:2.0.0"\
       ],\
       [\
+        "jose",\
+        "npm:4.9.0"\
+      ],\
+      [\
         "lru-cache",\
         "npm:7.14.0"\
       ],\
@@ -655,6 +659,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       [\
         "ms",\
         "npm:2.1.2"\
+      ],\
+      [\
+        "multiformats",\
+        "npm:9.7.1"\
       ],\
       [\
         "mutexify",\
@@ -938,7 +946,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],\
       [\
         "tsc-watch",\
-        "virtual:a6756baf67f33bff7de7102232f02a84501c0272f33dd4bfab14f55118065b7b48af18afe563a776f3e618d8e3b90e4028e7ccd4bffbd3d631132eaaf278c75e#npm:5.0.3"\
+        "virtual:39999e8c689f3a107f1d7cc7d23f780dd6385794a2fa7a8c10949cbbd06b13eb79ae0a36ed884e862ab7b614473fb743ee8bd989d5b02a6e5890bee087f91c63#npm:5.0.3"\
       ],\
       [\
         "typescript",\
@@ -950,11 +958,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],\
       [\
         "unique-filename",\
-        "npm:2.0.0"\
+        "npm:2.0.1"\
       ],\
       [\
         "unique-slug",\
-        "npm:2.0.2"\
+        "npm:3.0.0"\
       ],\
       [\
         "util-deprecate",\
@@ -1030,7 +1038,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@cubes/tsr", "workspace:packages/sdk/tsr"],\
             ["hypercore-crypto", "npm:3.3.0"],\
             ["rimraf", "npm:3.0.2"],\
-            ["tsc-watch", "virtual:a6756baf67f33bff7de7102232f02a84501c0272f33dd4bfab14f55118065b7b48af18afe563a776f3e618d8e3b90e4028e7ccd4bffbd3d631132eaaf278c75e#npm:5.0.3"],\
+            ["tsc-watch", "virtual:39999e8c689f3a107f1d7cc7d23f780dd6385794a2fa7a8c10949cbbd06b13eb79ae0a36ed884e862ab7b614473fb743ee8bd989d5b02a6e5890bee087f91c63#npm:5.0.3"],\
             ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=f456af"]\
           ],\
           "linkType": "SOFT"\
@@ -1042,6 +1050,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@cubes/database", "workspace:packages/modules/database"],\
             ["@cubes/tsr", "workspace:packages/sdk/tsr"],\
+            ["@types/node", "npm:18.7.13"],\
             ["cbor", "npm:8.1.0"],\
             ["charwise", "npm:3.0.1"],\
             ["esbuild", "npm:0.15.5"],\
@@ -1060,12 +1069,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/apps/droplet/",\
           "packageDependencies": [\
             ["@cubes/droplet", "workspace:packages/apps/droplet"],\
+            ["@cubes/crypto", "workspace:packages/modules/crypto"],\
             ["@cubes/tsr", "workspace:packages/sdk/tsr"],\
             ["@tinyhttp/app", "npm:2.0.22"],\
             ["@tinyhttp/cors", "npm:2.0.0"],\
+            ["jose", "npm:4.9.0"],\
+            ["multiformats", "npm:9.7.1"],\
             ["rimraf", "npm:3.0.2"],\
             ["tiny-glob", "npm:0.2.9"],\
-            ["tsc-watch", "virtual:a6756baf67f33bff7de7102232f02a84501c0272f33dd4bfab14f55118065b7b48af18afe563a776f3e618d8e3b90e4028e7ccd4bffbd3d631132eaaf278c75e#npm:5.0.3"],\
+            ["tsc-watch", "virtual:39999e8c689f3a107f1d7cc7d23f780dd6385794a2fa7a8c10949cbbd06b13eb79ae0a36ed884e862ab7b614473fb743ee8bd989d5b02a6e5890bee087f91c63#npm:5.0.3"],\
             ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=f456af"]\
           ],\
           "linkType": "SOFT"\
@@ -1524,7 +1536,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["rimraf", "npm:3.0.2"],\
             ["ssri", "npm:9.0.1"],\
             ["tar", "npm:6.1.11"],\
-            ["unique-filename", "npm:2.0.0"]\
+            ["unique-filename", "npm:2.0.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -2507,6 +2519,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["jose", [\
+        ["npm:4.9.0", {\
+          "packageLocation": "./.yarn/cache/jose-npm-4.9.0-7fd33ef1e3-fc1e71f493.zip/node_modules/jose/",\
+          "packageDependencies": [\
+            ["jose", "npm:4.9.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["lru-cache", [\
         ["npm:6.0.0", {\
           "packageLocation": "./.yarn/cache/lru-cache-npm-6.0.0-b4c8668fe1-f97f499f89.zip/node_modules/lru-cache/",\
@@ -2680,6 +2701,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/ms-npm-2.1.3-81ff3cfac1-aa92de6080.zip/node_modules/ms/",\
           "packageDependencies": [\
             ["ms", "npm:2.1.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["multiformats", [\
+        ["npm:9.7.1", {\
+          "packageLocation": "./.yarn/cache/multiformats-npm-9.7.1-b6b26ebecf-9193a4b555.zip/node_modules/multiformats/",\
+          "packageDependencies": [\
+            ["multiformats", "npm:9.7.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -3449,10 +3479,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:a6756baf67f33bff7de7102232f02a84501c0272f33dd4bfab14f55118065b7b48af18afe563a776f3e618d8e3b90e4028e7ccd4bffbd3d631132eaaf278c75e#npm:5.0.3", {\
-          "packageLocation": "./.yarn/__virtual__/tsc-watch-virtual-ff713d6d4e/0/cache/tsc-watch-npm-5.0.3-596701168c-abd63295dd.zip/node_modules/tsc-watch/",\
+        ["virtual:39999e8c689f3a107f1d7cc7d23f780dd6385794a2fa7a8c10949cbbd06b13eb79ae0a36ed884e862ab7b614473fb743ee8bd989d5b02a6e5890bee087f91c63#npm:5.0.3", {\
+          "packageLocation": "./.yarn/__virtual__/tsc-watch-virtual-a95aa3ba14/0/cache/tsc-watch-npm-5.0.3-596701168c-abd63295dd.zip/node_modules/tsc-watch/",\
           "packageDependencies": [\
-            ["tsc-watch", "virtual:a6756baf67f33bff7de7102232f02a84501c0272f33dd4bfab14f55118065b7b48af18afe563a776f3e618d8e3b90e4028e7ccd4bffbd3d631132eaaf278c75e#npm:5.0.3"],\
+            ["tsc-watch", "virtual:39999e8c689f3a107f1d7cc7d23f780dd6385794a2fa7a8c10949cbbd06b13eb79ae0a36ed884e862ab7b614473fb743ee8bd989d5b02a6e5890bee087f91c63#npm:5.0.3"],\
             ["@types/typescript", null],\
             ["cross-spawn", "npm:7.0.3"],\
             ["node-cleanup", "npm:2.1.2"],\
@@ -3487,20 +3517,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["unique-filename", [\
-        ["npm:2.0.0", {\
-          "packageLocation": "./.yarn/cache/unique-filename-npm-2.0.0-ef5b9541c3-801d5255b2.zip/node_modules/unique-filename/",\
+        ["npm:2.0.1", {\
+          "packageLocation": "./.yarn/cache/unique-filename-npm-2.0.1-183c6c7c2b-807acf3381.zip/node_modules/unique-filename/",\
           "packageDependencies": [\
-            ["unique-filename", "npm:2.0.0"],\
-            ["unique-slug", "npm:2.0.2"]\
+            ["unique-filename", "npm:2.0.1"],\
+            ["unique-slug", "npm:3.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["unique-slug", [\
-        ["npm:2.0.2", {\
-          "packageLocation": "./.yarn/cache/unique-slug-npm-2.0.2-f6ba1ddeb7-5b6876a645.zip/node_modules/unique-slug/",\
+        ["npm:3.0.0", {\
+          "packageLocation": "./.yarn/cache/unique-slug-npm-3.0.0-0b82e51577-49f8d915ba.zip/node_modules/unique-slug/",\
           "packageDependencies": [\
-            ["unique-slug", "npm:2.0.2"],\
+            ["unique-slug", "npm:3.0.0"],\
             ["imurmurhash", "npm:0.1.4"]\
           ],\
           "linkType": "HARD"\

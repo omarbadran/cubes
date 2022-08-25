@@ -17,6 +17,7 @@
   "packageManager": "yarn@3.2.2",
   "dependencies": {
     "@cubes/tsr": "workspace:*",
+    "@types/node": "^18.7.13",
     "cbor": "^8.1.0",
     "charwise": "^3.0.1",
     "hyperbee": "^1.10.1",

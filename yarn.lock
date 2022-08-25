@@ -5,7 +5,7 @@ __metadata:
   version: 6
   cacheKey: 8
 
-"@cubes/crypto@workspace:packages/modules/crypto":
+"@cubes/crypto@workspace:*, @cubes/crypto@workspace:packages/modules/crypto":
   version: 0.0.0-use.local
   resolution: "@cubes/crypto@workspace:packages/modules/crypto"
   dependencies:
@@ -22,6 +22,7 @@ __metadata:
   resolution: "@cubes/database@workspace:packages/modules/database"
   dependencies:
     "@cubes/tsr": "workspace:*"
+    "@types/node": ^18.7.13
     cbor: ^8.1.0
     charwise: ^3.0.1
     esbuild: ^0.15.5
@@ -38,9 +39,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cubes/droplet@workspace:packages/apps/droplet"
   dependencies:
+    "@cubes/crypto": "workspace:*"
     "@cubes/tsr": "workspace:*"
     "@tinyhttp/app": ^2.0.22
     "@tinyhttp/cors": ^2.0.0
+    jose: ^4.9.0
+    multiformats: ^9.7.1
     rimraf: ^3.0.2
     tiny-glob: ^0.2.9
     tsc-watch: ^5.0.3
@@ -278,7 +282,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^18.7.9":
+"@types/node@npm:^18.7.13, @types/node@npm:^18.7.9":
   version: 18.7.13
   resolution: "@types/node@npm:18.7.13"
   checksum: 45431e7e89ecaf85c7d2c180d801c132a7c59e2f8ad578726b6d71cc74e3267c18f9ccdcad738bc0479790c078f0c79efb0e58da2c6be535c15995dbb19050c9
@@ -1307,6 +1311,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jose@npm:^4.9.0":
+  version: 4.9.0
+  resolution: "jose@npm:4.9.0"
+  checksum: fc1e71f49327206eb58b23a2c5d463c3b1c84cd60ba2b8f8ab74db4a96ec079915fc71bc8b7d57d77b25d1426cd02eb218bf426738e803ab1a52adc1d96d0912
+  languageName: node
+  linkType: hard
+
 "lru-cache@npm:^6.0.0":
   version: 6.0.0
   resolution: "lru-cache@npm:6.0.0"
@@ -1469,6 +1480,13 @@ __metadata:
   version: 2.1.3
   resolution: "ms@npm:2.1.3"
   checksum: aa92de608021b242401676e35cfa5aa42dd70cbdc082b916da7fb925c542173e36bce97ea3e804923fe92c0ad991434e4a38327e15a1b5b5f945d66df615ae6d
+  languageName: node
+  linkType: hard
+
+"multiformats@npm:^9.7.1":
+  version: 9.7.1
+  resolution: "multiformats@npm:9.7.1"
+  checksum: 9193a4b55573dc88053a357e5f9562696d7cc47669e5ce5d7e147e3db1ec3f793567d7943c7e20271af9acd1e48c1679d0dfe932094333b16ed7f9f2ccf9197f
   languageName: node
   linkType: hard
 
@@ -2200,20 +2218,20 @@ __metadata:
   linkType: hard
 
 "unique-filename@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "unique-filename@npm:2.0.0"
+  version: 2.0.1
+  resolution: "unique-filename@npm:2.0.1"
   dependencies:
-    unique-slug: ^2.0.2
-  checksum: 801d5255b21e8be0b25c6c063df7c8d5e2d2dd295a466701ff6ffd31d86db4ece6cf4f0a3271374e48d8e26009163907fbed975195d4106bf5ca43b0923d74a0
+    unique-slug: ^3.0.0
+  checksum: 807acf3381aff319086b64dc7125a9a37c09c44af7620bd4f7f3247fcd5565660ac12d8b80534dcbfd067e6fe88a67e621386dd796a8af828d1337a8420a255f
   languageName: node
   linkType: hard
 
-"unique-slug@npm:^2.0.2":
-  version: 2.0.2
-  resolution: "unique-slug@npm:2.0.2"
+"unique-slug@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "unique-slug@npm:3.0.0"
   dependencies:
     imurmurhash: ^0.1.4
-  checksum: 5b6876a645da08d505dedb970d1571f6cebdf87044cb6b740c8dbb24f0d6e1dc8bdbf46825fd09f994d7cf50760e6f6e063cfa197d51c5902c00a861702eb75a
+  checksum: 49f8d915ba7f0101801b922062ee46b7953256c93ceca74303bd8e6413ae10aa7e8216556b54dc5382895e8221d04f1efaf75f945c2e4a515b4139f77aa6640c
   languageName: node
   linkType: hard
 

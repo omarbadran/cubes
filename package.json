@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "touch:package": "scripts:touch",
-    "format": "prettier --check packages/**/*.{ts,tsx,js,json,md,yml} --write"
+    "format": "prettier --check packages/*/*/src/**/*.{ts,tsx,js,json,md,yml} --write"
   },
   "devDependencies": {
     "@cubes/scripts": "workspace:^",

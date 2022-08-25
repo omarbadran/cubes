@@ -3,9 +3,11 @@
   "version": "0.0.1",
   "type": "module",
   "private": true,
-  "input": "src/index.ts",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "src/index.ts",
+  "publishConfig": {
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts"
+  },
   "scripts": {
     "build": "yarn clean & tsc",
     "clean": "rimraf coverage dist tmp",
