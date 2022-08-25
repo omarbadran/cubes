@@ -1,6 +1,6 @@
 import { ErrorHandler, Handler } from '@tinyhttp/app';
 
-import errors from './codes';
+import errors from './codes.js';
 
 export type ErrorCode = typeof errors[number]['code'];
 

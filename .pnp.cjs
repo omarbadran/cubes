@@ -47,6 +47,958 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["cubes", ["workspace:."]]\
     ],\
     "fallbackPool": [\
+      [\
+        "@cubes/database",\
+        "workspace:packages/modules/database"\
+      ],\
+      [\
+        "@cubes/droplet",\
+        "workspace:packages/apps/droplet"\
+      ],\
+      [\
+        "@cubes/scripts",\
+        "workspace:packages/sdk/scripts"\
+      ],\
+      [\
+        "@cubes/tsr",\
+        "workspace:packages/sdk/tsr"\
+      ],\
+      [\
+        "@esbuild/linux-loong64",\
+        "npm:0.15.5"\
+      ],\
+      [\
+        "@gar/promisify",\
+        "npm:1.1.3"\
+      ],\
+      [\
+        "@hyperswarm/secret-stream",\
+        "npm:6.0.0"\
+      ],\
+      [\
+        "@npmcli/fs",\
+        "npm:2.1.2"\
+      ],\
+      [\
+        "@npmcli/move-file",\
+        "npm:2.0.1"\
+      ],\
+      [\
+        "@tinyhttp/accepts",\
+        "npm:2.0.6"\
+      ],\
+      [\
+        "@tinyhttp/app",\
+        "npm:2.0.22"\
+      ],\
+      [\
+        "@tinyhttp/content-disposition",\
+        "npm:2.0.6"\
+      ],\
+      [\
+        "@tinyhttp/cookie",\
+        "npm:2.0.4"\
+      ],\
+      [\
+        "@tinyhttp/cookie-signature",\
+        "npm:2.0.4"\
+      ],\
+      [\
+        "@tinyhttp/cors",\
+        "npm:2.0.0"\
+      ],\
+      [\
+        "@tinyhttp/encode-url",\
+        "npm:2.0.5"\
+      ],\
+      [\
+        "@tinyhttp/etag",\
+        "npm:2.0.4"\
+      ],\
+      [\
+        "@tinyhttp/forwarded",\
+        "npm:2.0.4"\
+      ],\
+      [\
+        "@tinyhttp/proxy-addr",\
+        "npm:2.0.4"\
+      ],\
+      [\
+        "@tinyhttp/req",\
+        "npm:2.0.13"\
+      ],\
+      [\
+        "@tinyhttp/res",\
+        "npm:2.0.17"\
+      ],\
+      [\
+        "@tinyhttp/router",\
+        "npm:2.0.5"\
+      ],\
+      [\
+        "@tinyhttp/send",\
+        "npm:2.0.5"\
+      ],\
+      [\
+        "@tinyhttp/type-is",\
+        "npm:2.0.5"\
+      ],\
+      [\
+        "@tinyhttp/url",\
+        "npm:2.0.6"\
+      ],\
+      [\
+        "@tootallnate/once",\
+        "npm:2.0.0"\
+      ],\
+      [\
+        "@types/node",\
+        "npm:18.7.13"\
+      ],\
+      [\
+        "abbrev",\
+        "npm:1.1.1"\
+      ],\
+      [\
+        "agent-base",\
+        "npm:6.0.2"\
+      ],\
+      [\
+        "agentkeepalive",\
+        "npm:4.2.1"\
+      ],\
+      [\
+        "aggregate-error",\
+        "npm:3.1.0"\
+      ],\
+      [\
+        "ansi-regex",\
+        "npm:5.0.1"\
+      ],\
+      [\
+        "ansi-styles",\
+        "npm:4.3.0"\
+      ],\
+      [\
+        "aproba",\
+        "npm:2.0.0"\
+      ],\
+      [\
+        "are-we-there-yet",\
+        "npm:3.0.1"\
+      ],\
+      [\
+        "b4a",\
+        "npm:1.6.0"\
+      ],\
+      [\
+        "balanced-match",\
+        "npm:1.0.2"\
+      ],\
+      [\
+        "big-sparse-array",\
+        "npm:1.0.2"\
+      ],\
+      [\
+        "bits-to-bytes",\
+        "npm:1.3.0"\
+      ],\
+      [\
+        "blake2b",\
+        "npm:2.1.4"\
+      ],\
+      [\
+        "blake2b-wasm",\
+        "npm:2.4.0"\
+      ],\
+      [\
+        "brace-expansion",\
+        "npm:1.1.11"\
+      ],\
+      [\
+        "cacache",\
+        "npm:16.1.3"\
+      ],\
+      [\
+        "call-me-maybe",\
+        "npm:1.0.1"\
+      ],\
+      [\
+        "cbor",\
+        "npm:8.1.0"\
+      ],\
+      [\
+        "chacha20-universal",\
+        "npm:1.0.4"\
+      ],\
+      [\
+        "charwise",\
+        "npm:3.0.1"\
+      ],\
+      [\
+        "chownr",\
+        "npm:2.0.0"\
+      ],\
+      [\
+        "clean-stack",\
+        "npm:2.2.0"\
+      ],\
+      [\
+        "cliui",\
+        "npm:7.0.4"\
+      ],\
+      [\
+        "codecs",\
+        "npm:2.2.0"\
+      ],\
+      [\
+        "color-convert",\
+        "npm:2.0.1"\
+      ],\
+      [\
+        "color-name",\
+        "npm:1.1.4"\
+      ],\
+      [\
+        "color-support",\
+        "npm:1.1.3"\
+      ],\
+      [\
+        "commander",\
+        "npm:9.4.0"\
+      ],\
+      [\
+        "compact-encoding",\
+        "npm:2.11.0"\
+      ],\
+      [\
+        "concat-map",\
+        "npm:0.0.1"\
+      ],\
+      [\
+        "console-control-strings",\
+        "npm:1.1.0"\
+      ],\
+      [\
+        "crc32-universal",\
+        "npm:1.0.1"\
+      ],\
+      [\
+        "cross-spawn",\
+        "npm:7.0.3"\
+      ],\
+      [\
+        "debug",\
+        "virtual:b86a9fb34323a98c6519528ed55faa0d9b44ca8879307c0b29aa384bde47ff59a7d0c9051b31246f14521dfb71ba3c5d6d0b35c29fffc17bf875aa6ad977d9e8#npm:4.3.4"\
+      ],\
+      [\
+        "delegates",\
+        "npm:1.0.0"\
+      ],\
+      [\
+        "depd",\
+        "npm:1.1.2"\
+      ],\
+      [\
+        "duplexer",\
+        "npm:0.1.2"\
+      ],\
+      [\
+        "emoji-regex",\
+        "npm:8.0.0"\
+      ],\
+      [\
+        "encoding",\
+        "npm:0.1.13"\
+      ],\
+      [\
+        "env-paths",\
+        "npm:2.2.1"\
+      ],\
+      [\
+        "err-code",\
+        "npm:2.0.3"\
+      ],\
+      [\
+        "es-content-type",\
+        "npm:0.1.0"\
+      ],\
+      [\
+        "es-escape-html",\
+        "npm:0.1.1"\
+      ],\
+      [\
+        "es-fresh",\
+        "npm:0.0.10"\
+      ],\
+      [\
+        "es-mime-types",\
+        "npm:0.1.4"\
+      ],\
+      [\
+        "es-vary",\
+        "npm:0.1.2"\
+      ],\
+      [\
+        "esbuild",\
+        "npm:0.15.5"\
+      ],\
+      [\
+        "esbuild-android-64",\
+        "npm:0.15.5"\
+      ],\
+      [\
+        "esbuild-android-arm64",\
+        "npm:0.15.5"\
+      ],\
+      [\
+        "esbuild-darwin-64",\
+        "npm:0.15.5"\
+      ],\
+      [\
+        "esbuild-darwin-arm64",\
+        "npm:0.15.5"\
+      ],\
+      [\
+        "esbuild-freebsd-64",\
+        "npm:0.15.5"\
+      ],\
+      [\
+        "esbuild-freebsd-arm64",\
+        "npm:0.15.5"\
+      ],\
+      [\
+        "esbuild-linux-32",\
+        "npm:0.15.5"\
+      ],\
+      [\
+        "esbuild-linux-64",\
+        "npm:0.15.5"\
+      ],\
+      [\
+        "esbuild-linux-arm",\
+        "npm:0.15.5"\
+      ],\
+      [\
+        "esbuild-linux-arm64",\
+        "npm:0.15.5"\
+      ],\
+      [\
+        "esbuild-linux-mips64le",\
+        "npm:0.15.5"\
+      ],\
+      [\
+        "esbuild-linux-ppc64le",\
+        "npm:0.15.5"\
+      ],\
+      [\
+        "esbuild-linux-riscv64",\
+        "npm:0.15.5"\
+      ],\
+      [\
+        "esbuild-linux-s390x",\
+        "npm:0.15.5"\
+      ],\
+      [\
+        "esbuild-netbsd-64",\
+        "npm:0.15.5"\
+      ],\
+      [\
+        "esbuild-openbsd-64",\
+        "npm:0.15.5"\
+      ],\
+      [\
+        "esbuild-sunos-64",\
+        "npm:0.15.5"\
+      ],\
+      [\
+        "esbuild-windows-32",\
+        "npm:0.15.5"\
+      ],\
+      [\
+        "esbuild-windows-64",\
+        "npm:0.15.5"\
+      ],\
+      [\
+        "esbuild-windows-arm64",\
+        "npm:0.15.5"\
+      ],\
+      [\
+        "escalade",\
+        "npm:3.1.1"\
+      ],\
+      [\
+        "event-stream",\
+        "npm:3.3.4"\
+      ],\
+      [\
+        "events",\
+        "npm:3.3.0"\
+      ],\
+      [\
+        "fast-fifo",\
+        "npm:1.1.0"\
+      ],\
+      [\
+        "flat-tree",\
+        "npm:1.9.0"\
+      ],\
+      [\
+        "from",\
+        "npm:0.1.7"\
+      ],\
+      [\
+        "fs-minipass",\
+        "npm:2.1.0"\
+      ],\
+      [\
+        "fs-native-extensions",\
+        "npm:1.1.0"\
+      ],\
+      [\
+        "fs.realpath",\
+        "npm:1.0.0"\
+      ],\
+      [\
+        "function-bind",\
+        "npm:1.1.1"\
+      ],\
+      [\
+        "gauge",\
+        "npm:4.0.4"\
+      ],\
+      [\
+        "get-caller-file",\
+        "npm:2.0.5"\
+      ],\
+      [\
+        "glob",\
+        "npm:7.2.3"\
+      ],\
+      [\
+        "globalyzer",\
+        "npm:0.1.0"\
+      ],\
+      [\
+        "globrex",\
+        "npm:0.1.2"\
+      ],\
+      [\
+        "graceful-fs",\
+        "npm:4.2.10"\
+      ],\
+      [\
+        "has",\
+        "npm:1.0.3"\
+      ],\
+      [\
+        "has-unicode",\
+        "npm:2.0.1"\
+      ],\
+      [\
+        "header-range-parser",\
+        "npm:1.1.3"\
+      ],\
+      [\
+        "hmac-blake2b",\
+        "npm:2.0.0"\
+      ],\
+      [\
+        "http-cache-semantics",\
+        "npm:4.1.0"\
+      ],\
+      [\
+        "http-proxy-agent",\
+        "npm:5.0.0"\
+      ],\
+      [\
+        "https-proxy-agent",\
+        "npm:5.0.1"\
+      ],\
+      [\
+        "humanize-ms",\
+        "npm:1.2.1"\
+      ],\
+      [\
+        "hyperbee",\
+        "npm:1.10.1"\
+      ],\
+      [\
+        "hypercore",\
+        "npm:10.2.0"\
+      ],\
+      [\
+        "hypercore-crypto",\
+        "npm:3.3.0"\
+      ],\
+      [\
+        "hypercore-promisifier",\
+        "npm:1.1.0"\
+      ],\
+      [\
+        "iconv-lite",\
+        "npm:0.6.3"\
+      ],\
+      [\
+        "imurmurhash",\
+        "npm:0.1.4"\
+      ],\
+      [\
+        "indent-string",\
+        "npm:4.0.0"\
+      ],\
+      [\
+        "infer-owner",\
+        "npm:1.0.4"\
+      ],\
+      [\
+        "inflight",\
+        "npm:1.0.6"\
+      ],\
+      [\
+        "inherits",\
+        "npm:2.0.4"\
+      ],\
+      [\
+        "inspect-custom-symbol",\
+        "npm:1.1.1"\
+      ],\
+      [\
+        "ip",\
+        "npm:2.0.0"\
+      ],\
+      [\
+        "ipaddr.js",\
+        "npm:2.0.1"\
+      ],\
+      [\
+        "is-core-module",\
+        "npm:2.10.0"\
+      ],\
+      [\
+        "is-fullwidth-code-point",\
+        "npm:3.0.0"\
+      ],\
+      [\
+        "is-lambda",\
+        "npm:1.0.1"\
+      ],\
+      [\
+        "is-options",\
+        "npm:1.0.2"\
+      ],\
+      [\
+        "isexe",\
+        "npm:2.0.0"\
+      ],\
+      [\
+        "lru-cache",\
+        "npm:7.14.0"\
+      ],\
+      [\
+        "make-fetch-happen",\
+        "npm:10.2.1"\
+      ],\
+      [\
+        "map-stream",\
+        "npm:0.1.0"\
+      ],\
+      [\
+        "mime-db",\
+        "npm:1.52.0"\
+      ],\
+      [\
+        "minimatch",\
+        "npm:3.1.2"\
+      ],\
+      [\
+        "minipass",\
+        "npm:3.3.5"\
+      ],\
+      [\
+        "minipass-collect",\
+        "npm:1.0.2"\
+      ],\
+      [\
+        "minipass-fetch",\
+        "npm:2.1.2"\
+      ],\
+      [\
+        "minipass-flush",\
+        "npm:1.0.5"\
+      ],\
+      [\
+        "minipass-pipeline",\
+        "npm:1.2.4"\
+      ],\
+      [\
+        "minipass-sized",\
+        "npm:1.0.3"\
+      ],\
+      [\
+        "minizlib",\
+        "npm:2.1.2"\
+      ],\
+      [\
+        "mkdirp",\
+        "npm:1.0.4"\
+      ],\
+      [\
+        "ms",\
+        "npm:2.1.2"\
+      ],\
+      [\
+        "mutexify",\
+        "npm:1.4.0"\
+      ],\
+      [\
+        "nanoassert",\
+        "npm:2.0.0"\
+      ],\
+      [\
+        "napi-macros",\
+        "npm:2.0.0"\
+      ],\
+      [\
+        "negotiator",\
+        "npm:0.6.3"\
+      ],\
+      [\
+        "node-cleanup",\
+        "npm:2.1.2"\
+      ],\
+      [\
+        "node-gyp",\
+        "npm:9.1.0"\
+      ],\
+      [\
+        "node-gyp-build",\
+        "npm:4.5.0"\
+      ],\
+      [\
+        "nofilter",\
+        "npm:3.1.0"\
+      ],\
+      [\
+        "noise-curve-ed",\
+        "npm:1.0.4"\
+      ],\
+      [\
+        "noise-handshake",\
+        "npm:2.2.0"\
+      ],\
+      [\
+        "nopt",\
+        "npm:5.0.0"\
+      ],\
+      [\
+        "npmlog",\
+        "npm:6.0.2"\
+      ],\
+      [\
+        "once",\
+        "npm:1.4.0"\
+      ],\
+      [\
+        "p-map",\
+        "npm:4.0.0"\
+      ],\
+      [\
+        "path-is-absolute",\
+        "npm:1.0.1"\
+      ],\
+      [\
+        "path-key",\
+        "npm:3.1.1"\
+      ],\
+      [\
+        "path-parse",\
+        "npm:1.0.7"\
+      ],\
+      [\
+        "pause-stream",\
+        "npm:0.0.11"\
+      ],\
+      [\
+        "prettier",\
+        "npm:2.7.1"\
+      ],\
+      [\
+        "promise-inflight",\
+        "virtual:4e2088ed0df52533102f445d7e7aeba6560b7effa0cabbc7cc20dd1e36a86dd838cc541de4414688f4ce3ec77b0ad5298cea6de581350d934ceb35c3e0fe3462#npm:1.0.1"\
+      ],\
+      [\
+        "promise-retry",\
+        "npm:2.0.1"\
+      ],\
+      [\
+        "protocol-buffers-encodings",\
+        "npm:1.2.0"\
+      ],\
+      [\
+        "protomux",\
+        "npm:3.3.0"\
+      ],\
+      [\
+        "ps-tree",\
+        "npm:1.2.0"\
+      ],\
+      [\
+        "queue-tick",\
+        "npm:1.0.0"\
+      ],\
+      [\
+        "random-access-file",\
+        "npm:3.2.2"\
+      ],\
+      [\
+        "random-access-memory",\
+        "npm:5.0.1"\
+      ],\
+      [\
+        "random-access-storage",\
+        "npm:2.2.1"\
+      ],\
+      [\
+        "random-array-iterator",\
+        "npm:1.0.0"\
+      ],\
+      [\
+        "readable-stream",\
+        "npm:3.6.0"\
+      ],\
+      [\
+        "regexparam",\
+        "npm:2.0.1"\
+      ],\
+      [\
+        "require-directory",\
+        "npm:2.1.1"\
+      ],\
+      [\
+        "resolve",\
+        "patch:resolve@npm%3A1.22.1#~builtin<compat/resolve>::version=1.22.1&hash=07638b"\
+      ],\
+      [\
+        "retry",\
+        "npm:0.12.0"\
+      ],\
+      [\
+        "rimraf",\
+        "npm:3.0.2"\
+      ],\
+      [\
+        "safe-buffer",\
+        "npm:5.2.1"\
+      ],\
+      [\
+        "safer-buffer",\
+        "npm:2.1.2"\
+      ],\
+      [\
+        "safety-catch",\
+        "npm:1.0.2"\
+      ],\
+      [\
+        "scan-dir-recursive",\
+        "npm:1.0.11"\
+      ],\
+      [\
+        "semver",\
+        "npm:7.3.7"\
+      ],\
+      [\
+        "set-blocking",\
+        "npm:2.0.0"\
+      ],\
+      [\
+        "sha256-universal",\
+        "npm:1.2.1"\
+      ],\
+      [\
+        "sha256-wasm",\
+        "npm:2.2.2"\
+      ],\
+      [\
+        "sha512-universal",\
+        "npm:1.2.1"\
+      ],\
+      [\
+        "sha512-wasm",\
+        "npm:2.3.4"\
+      ],\
+      [\
+        "shebang-command",\
+        "npm:2.0.0"\
+      ],\
+      [\
+        "shebang-regex",\
+        "npm:3.0.0"\
+      ],\
+      [\
+        "signal-exit",\
+        "npm:3.0.7"\
+      ],\
+      [\
+        "signed-varint",\
+        "npm:2.0.1"\
+      ],\
+      [\
+        "siphash24",\
+        "npm:1.3.1"\
+      ],\
+      [\
+        "smart-buffer",\
+        "npm:4.2.0"\
+      ],\
+      [\
+        "socks",\
+        "npm:2.7.0"\
+      ],\
+      [\
+        "socks-proxy-agent",\
+        "npm:7.0.0"\
+      ],\
+      [\
+        "sodium-javascript",\
+        "npm:0.8.0"\
+      ],\
+      [\
+        "sodium-native",\
+        "npm:3.4.1"\
+      ],\
+      [\
+        "sodium-secretstream",\
+        "npm:1.0.2"\
+      ],\
+      [\
+        "sodium-universal",\
+        "npm:3.1.0"\
+      ],\
+      [\
+        "split",\
+        "npm:0.3.3"\
+      ],\
+      [\
+        "ssri",\
+        "npm:9.0.1"\
+      ],\
+      [\
+        "stream-combiner",\
+        "npm:0.0.4"\
+      ],\
+      [\
+        "streamx",\
+        "npm:2.12.5"\
+      ],\
+      [\
+        "string-argv",\
+        "npm:0.1.2"\
+      ],\
+      [\
+        "string-width",\
+        "npm:4.2.3"\
+      ],\
+      [\
+        "string_decoder",\
+        "npm:1.3.0"\
+      ],\
+      [\
+        "strip-ansi",\
+        "npm:6.0.1"\
+      ],\
+      [\
+        "supports-preserve-symlinks-flag",\
+        "npm:1.0.0"\
+      ],\
+      [\
+        "tar",\
+        "npm:6.1.11"\
+      ],\
+      [\
+        "through",\
+        "npm:2.3.8"\
+      ],\
+      [\
+        "timeout-refresh",\
+        "npm:2.0.1"\
+      ],\
+      [\
+        "tiny-glob",\
+        "npm:0.2.9"\
+      ],\
+      [\
+        "tsc-watch",\
+        "virtual:a6756baf67f33bff7de7102232f02a84501c0272f33dd4bfab14f55118065b7b48af18afe563a776f3e618d8e3b90e4028e7ccd4bffbd3d631132eaaf278c75e#npm:5.0.3"\
+      ],\
+      [\
+        "typescript",\
+        "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=f456af"\
+      ],\
+      [\
+        "ulid",\
+        "npm:2.3.0"\
+      ],\
+      [\
+        "unique-filename",\
+        "npm:2.0.0"\
+      ],\
+      [\
+        "unique-slug",\
+        "npm:2.0.2"\
+      ],\
+      [\
+        "util-deprecate",\
+        "npm:1.0.2"\
+      ],\
+      [\
+        "varint",\
+        "npm:5.0.2"\
+      ],\
+      [\
+        "which",\
+        "npm:2.0.2"\
+      ],\
+      [\
+        "wide-align",\
+        "npm:1.1.5"\
+      ],\
+      [\
+        "wrap-ansi",\
+        "npm:7.0.0"\
+      ],\
+      [\
+        "wrappy",\
+        "npm:1.0.2"\
+      ],\
+      [\
+        "xache",\
+        "npm:1.1.0"\
+      ],\
+      [\
+        "xsalsa20",\
+        "npm:1.2.0"\
+      ],\
+      [\
+        "y18n",\
+        "npm:5.0.8"\
+      ],\
+      [\
+        "yallist",\
+        "npm:4.0.0"\
+      ],\
+      [\
+        "yargs",\
+        "npm:17.5.1"\
+      ],\
+      [\
+        "yargs-parser",\
+        "npm:21.1.1"\
+      ],\
+      [\
+        "z32",\
+        "npm:1.0.0"\
+      ]\
     ],\
     "packageRegistryData": [\
       [null, [\
@@ -88,8 +1040,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@cubes/tsr", "workspace:packages/sdk/tsr"],\
             ["@tinyhttp/app", "npm:2.0.22"],\
             ["@tinyhttp/cors", "npm:2.0.0"],\
-            ["esbuild", "npm:0.15.5"],\
             ["rimraf", "npm:3.0.2"],\
+            ["tiny-glob", "npm:0.2.9"],\
+            ["tsc-watch", "virtual:a6756baf67f33bff7de7102232f02a84501c0272f33dd4bfab14f55118065b7b48af18afe563a776f3e618d8e3b90e4028e7ccd4bffbd3d631132eaaf278c75e#npm:5.0.3"],\
             ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=f456af"]\
           ],\
           "linkType": "SOFT"\
@@ -705,6 +1658,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["cross-spawn", [\
+        ["npm:7.0.3", {\
+          "packageLocation": "./.yarn/cache/cross-spawn-npm-7.0.3-e4ff3e65b3-671cc7c728.zip/node_modules/cross-spawn/",\
+          "packageDependencies": [\
+            ["cross-spawn", "npm:7.0.3"],\
+            ["path-key", "npm:3.1.1"],\
+            ["shebang-command", "npm:2.0.0"],\
+            ["which", "npm:2.0.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["cubes", [\
         ["workspace:.", {\
           "packageLocation": "./",\
@@ -755,6 +1720,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/depd-npm-1.1.2-b0c8414da7-6b406620d2.zip/node_modules/depd/",\
           "packageDependencies": [\
             ["depd", "npm:1.1.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["duplexer", [\
+        ["npm:0.1.2", {\
+          "packageLocation": "./.yarn/cache/duplexer-npm-0.1.2-952c810235-62ba61a830.zip/node_modules/duplexer/",\
+          "packageDependencies": [\
+            ["duplexer", "npm:0.1.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -1061,6 +2035,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["event-stream", [\
+        ["npm:3.3.4", {\
+          "packageLocation": "./.yarn/cache/event-stream-npm-3.3.4-5a4db234bf-80b467820b.zip/node_modules/event-stream/",\
+          "packageDependencies": [\
+            ["event-stream", "npm:3.3.4"],\
+            ["duplexer", "npm:0.1.2"],\
+            ["from", "npm:0.1.7"],\
+            ["map-stream", "npm:0.1.0"],\
+            ["pause-stream", "npm:0.0.11"],\
+            ["split", "npm:0.3.3"],\
+            ["stream-combiner", "npm:0.0.4"],\
+            ["through", "npm:2.3.8"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["events", [\
         ["npm:3.3.0", {\
           "packageLocation": "./.yarn/cache/events-npm-3.3.0-c280bc7e48-f6f487ad21.zip/node_modules/events/",\
@@ -1084,6 +2074,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/flat-tree-npm-1.9.0-02688259f9-e8cf693a21.zip/node_modules/flat-tree/",\
           "packageDependencies": [\
             ["flat-tree", "npm:1.9.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["from", [\
+        ["npm:0.1.7", {\
+          "packageLocation": "./.yarn/cache/from-npm-0.1.7-6dcf14a57d-b85125b789.zip/node_modules/from/",\
+          "packageDependencies": [\
+            ["from", "npm:0.1.7"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -1177,6 +2176,24 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["inherits", "npm:2.0.4"],\
             ["minimatch", "npm:5.1.0"],\
             ["once", "npm:1.4.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["globalyzer", [\
+        ["npm:0.1.0", {\
+          "packageLocation": "./.yarn/cache/globalyzer-npm-0.1.0-3982d25961-419a0f95ba.zip/node_modules/globalyzer/",\
+          "packageDependencies": [\
+            ["globalyzer", "npm:0.1.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["globrex", [\
+        ["npm:0.1.2", {\
+          "packageLocation": "./.yarn/cache/globrex-npm-0.1.2-ddda94f2d0-adca162494.zip/node_modules/globrex/",\
+          "packageDependencies": [\
+            ["globrex", "npm:0.1.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -1509,6 +2526,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["map-stream", [\
+        ["npm:0.1.0", {\
+          "packageLocation": "./.yarn/cache/map-stream-npm-0.1.0-e44450fc62-38abbe4eb8.zip/node_modules/map-stream/",\
+          "packageDependencies": [\
+            ["map-stream", "npm:0.1.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["mime-db", [\
         ["npm:1.52.0", {\
           "packageLocation": "./.yarn/cache/mime-db-npm-1.52.0-b5371d6fd2-0d99a03585.zip/node_modules/mime-db/",\
@@ -1679,6 +2705,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["node-cleanup", [\
+        ["npm:2.1.2", {\
+          "packageLocation": "./.yarn/cache/node-cleanup-npm-2.1.2-adfbc95778-584cdc3e42.zip/node_modules/node-cleanup/",\
+          "packageDependencies": [\
+            ["node-cleanup", "npm:2.1.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["node-gyp", [\
         ["npm:9.1.0", {\
           "packageLocation": "./.yarn/unplugged/node-gyp-npm-9.1.0-2091059b31/node_modules/node-gyp/",\
@@ -1793,11 +2828,30 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["path-key", [\
+        ["npm:3.1.1", {\
+          "packageLocation": "./.yarn/cache/path-key-npm-3.1.1-0e66ea8321-55cd7a9dd4.zip/node_modules/path-key/",\
+          "packageDependencies": [\
+            ["path-key", "npm:3.1.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["path-parse", [\
         ["npm:1.0.7", {\
           "packageLocation": "./.yarn/cache/path-parse-npm-1.0.7-09564527b7-49abf3d811.zip/node_modules/path-parse/",\
           "packageDependencies": [\
             ["path-parse", "npm:1.0.7"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["pause-stream", [\
+        ["npm:0.0.11", {\
+          "packageLocation": "./.yarn/cache/pause-stream-npm-0.0.11-d0e142313d-3c4a14052a.zip/node_modules/pause-stream/",\
+          "packageDependencies": [\
+            ["pause-stream", "npm:0.0.11"],\
+            ["through", "npm:2.3.8"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -1865,6 +2919,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["compact-encoding", "npm:2.11.0"],\
             ["queue-tick", "npm:1.0.0"],\
             ["safety-catch", "npm:1.0.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["ps-tree", [\
+        ["npm:1.2.0", {\
+          "packageLocation": "./.yarn/cache/ps-tree-npm-1.2.0-3975e95bd6-e635dd00f5.zip/node_modules/ps-tree/",\
+          "packageDependencies": [\
+            ["ps-tree", "npm:1.2.0"],\
+            ["event-stream", "npm:3.3.4"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -2082,6 +3146,25 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["shebang-command", [\
+        ["npm:2.0.0", {\
+          "packageLocation": "./.yarn/cache/shebang-command-npm-2.0.0-eb2b01921d-6b52fe8727.zip/node_modules/shebang-command/",\
+          "packageDependencies": [\
+            ["shebang-command", "npm:2.0.0"],\
+            ["shebang-regex", "npm:3.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["shebang-regex", [\
+        ["npm:3.0.0", {\
+          "packageLocation": "./.yarn/cache/shebang-regex-npm-3.0.0-899a0cd65e-1a2bcae50d.zip/node_modules/shebang-regex/",\
+          "packageDependencies": [\
+            ["shebang-regex", "npm:3.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["signal-exit", [\
         ["npm:3.0.7", {\
           "packageLocation": "./.yarn/cache/signal-exit-npm-3.0.7-bd270458a3-a2f098f247.zip/node_modules/signal-exit/",\
@@ -2200,12 +3283,32 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["split", [\
+        ["npm:0.3.3", {\
+          "packageLocation": "./.yarn/cache/split-npm-0.3.3-847dc2ba97-2e076634c9.zip/node_modules/split/",\
+          "packageDependencies": [\
+            ["split", "npm:0.3.3"],\
+            ["through", "npm:2.3.8"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["ssri", [\
         ["npm:9.0.1", {\
           "packageLocation": "./.yarn/cache/ssri-npm-9.0.1-33ce27f4f8-fb58f5e46b.zip/node_modules/ssri/",\
           "packageDependencies": [\
             ["ssri", "npm:9.0.1"],\
             ["minipass", "npm:3.3.5"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["stream-combiner", [\
+        ["npm:0.0.4", {\
+          "packageLocation": "./.yarn/cache/stream-combiner-npm-0.0.4-0176779791-844b622cfe.zip/node_modules/stream-combiner/",\
+          "packageDependencies": [\
+            ["stream-combiner", "npm:0.0.4"],\
+            ["duplexer", "npm:0.1.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -2217,6 +3320,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["streamx", "npm:2.12.5"],\
             ["fast-fifo", "npm:1.1.0"],\
             ["queue-tick", "npm:1.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["string-argv", [\
+        ["npm:0.1.2", {\
+          "packageLocation": "./.yarn/cache/string-argv-npm-0.1.2-d3191098fc-6877bd72af.zip/node_modules/string-argv/",\
+          "packageDependencies": [\
+            ["string-argv", "npm:0.1.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -2277,11 +3389,58 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["through", [\
+        ["npm:2.3.8", {\
+          "packageLocation": "./.yarn/cache/through-npm-2.3.8-df5f72a16e-a38c3e0598.zip/node_modules/through/",\
+          "packageDependencies": [\
+            ["through", "npm:2.3.8"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["timeout-refresh", [\
         ["npm:2.0.1", {\
           "packageLocation": "./.yarn/cache/timeout-refresh-npm-2.0.1-c3d922b201-12add9958c.zip/node_modules/timeout-refresh/",\
           "packageDependencies": [\
             ["timeout-refresh", "npm:2.0.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["tiny-glob", [\
+        ["npm:0.2.9", {\
+          "packageLocation": "./.yarn/cache/tiny-glob-npm-0.2.9-068f4ab3f8-aea5801eb6.zip/node_modules/tiny-glob/",\
+          "packageDependencies": [\
+            ["tiny-glob", "npm:0.2.9"],\
+            ["globalyzer", "npm:0.1.0"],\
+            ["globrex", "npm:0.1.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["tsc-watch", [\
+        ["npm:5.0.3", {\
+          "packageLocation": "./.yarn/cache/tsc-watch-npm-5.0.3-596701168c-abd63295dd.zip/node_modules/tsc-watch/",\
+          "packageDependencies": [\
+            ["tsc-watch", "npm:5.0.3"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:a6756baf67f33bff7de7102232f02a84501c0272f33dd4bfab14f55118065b7b48af18afe563a776f3e618d8e3b90e4028e7ccd4bffbd3d631132eaaf278c75e#npm:5.0.3", {\
+          "packageLocation": "./.yarn/__virtual__/tsc-watch-virtual-ff713d6d4e/0/cache/tsc-watch-npm-5.0.3-596701168c-abd63295dd.zip/node_modules/tsc-watch/",\
+          "packageDependencies": [\
+            ["tsc-watch", "virtual:a6756baf67f33bff7de7102232f02a84501c0272f33dd4bfab14f55118065b7b48af18afe563a776f3e618d8e3b90e4028e7ccd4bffbd3d631132eaaf278c75e#npm:5.0.3"],\
+            ["@types/typescript", null],\
+            ["cross-spawn", "npm:7.0.3"],\
+            ["node-cleanup", "npm:2.1.2"],\
+            ["ps-tree", "npm:1.2.0"],\
+            ["string-argv", "npm:0.1.2"],\
+            ["strip-ansi", "npm:6.0.1"],\
+            ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=f456af"]\
+          ],\
+          "packagePeers": [\
+            "@types/typescript",\
+            "typescript"\
           ],\
           "linkType": "HARD"\
         }]\

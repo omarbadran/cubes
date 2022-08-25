@@ -7,24 +7,22 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "yarn clean & yarn types && esbuild ./src/**/* --outdir=dist",
-    "build:node": "yarn build --platform=node --format=esm",
-    "build:browser": "yarn build --minify",
+    "build": "yarn clean & tsc",
     "clean": "rimraf coverage dist tmp",
-    "start": "tsr -f src/index.ts",
-    "dev": "yarn start -w",
-    "types": "tsc src/**/*.ts --declaration --emitDeclarationOnly --outDir dist",
+    "start": "yarn build && node dist/index.js",
+    "dev": "tsc-watch --onSuccess 'node ./dist/index.js'",
     "test": "tsr -f tests/all.test.ts"
   },
   "packageManager": "yarn@3.2.2",
   "dependencies": {
     "@cubes/tsr": "workspace:*",
     "@tinyhttp/app": "^2.0.22",
-    "@tinyhttp/cors": "^2.0.0"
+    "@tinyhttp/cors": "^2.0.0",
+    "tiny-glob": "^0.2.9"
   },
   "devDependencies": {
-    "esbuild": "^0.15.5",
     "rimraf": "^3.0.2",
+    "tsc-watch": "^5.0.3",
     "typescript": "^4.7.4"
   }
 }
