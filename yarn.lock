@@ -5,6 +5,18 @@ __metadata:
   version: 6
   cacheKey: 8
 
+"@cubes/crypto@workspace:packages/modules/crypto":
+  version: 0.0.0-use.local
+  resolution: "@cubes/crypto@workspace:packages/modules/crypto"
+  dependencies:
+    "@cubes/tsr": "workspace:*"
+    hypercore-crypto: ^3.3.0
+    rimraf: ^3.0.2
+    tsc-watch: ^5.0.3
+    typescript: ^4.7.4
+  languageName: unknown
+  linkType: soft
+
 "@cubes/database@workspace:packages/modules/database":
   version: 0.0.0-use.local
   resolution: "@cubes/database@workspace:packages/modules/database"

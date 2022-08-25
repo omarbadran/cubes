@@ -25,6 +25,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:packages/apps/droplet"\
       },\
       {\
+        "name": "@cubes/crypto",\
+        "reference": "workspace:packages/modules/crypto"\
+      },\
+      {\
         "name": "@cubes/database",\
         "reference": "workspace:packages/modules/database"\
       },\
@@ -40,6 +44,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "enableTopLevelFallback": true,\
     "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
     "fallbackExclusionList": [\
+      ["@cubes/crypto", ["workspace:packages/modules/crypto"]],\
       ["@cubes/database", ["workspace:packages/modules/database"]],\
       ["@cubes/droplet", ["workspace:packages/apps/droplet"]],\
       ["@cubes/scripts", ["workspace:packages/sdk/scripts"]],\
@@ -47,6 +52,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["cubes", ["workspace:."]]\
     ],\
     "fallbackPool": [\
+      [\
+        "@cubes/crypto",\
+        "workspace:packages/modules/crypto"\
+      ],\
       [\
         "@cubes/database",\
         "workspace:packages/modules/database"\
@@ -1008,6 +1017,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@cubes/scripts", "workspace:packages/sdk/scripts"],\
             ["@types/node", "npm:18.7.13"],\
             ["prettier", "npm:2.7.1"],\
+            ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=f456af"]\
+          ],\
+          "linkType": "SOFT"\
+        }]\
+      ]],\
+      ["@cubes/crypto", [\
+        ["workspace:packages/modules/crypto", {\
+          "packageLocation": "./packages/modules/crypto/",\
+          "packageDependencies": [\
+            ["@cubes/crypto", "workspace:packages/modules/crypto"],\
+            ["@cubes/tsr", "workspace:packages/sdk/tsr"],\
+            ["hypercore-crypto", "npm:3.3.0"],\
+            ["rimraf", "npm:3.0.2"],\
+            ["tsc-watch", "virtual:a6756baf67f33bff7de7102232f02a84501c0272f33dd4bfab14f55118065b7b48af18afe563a776f3e618d8e3b90e4028e7ccd4bffbd3d631132eaaf278c75e#npm:5.0.3"],\
             ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=f456af"]\
           ],\
           "linkType": "SOFT"\
