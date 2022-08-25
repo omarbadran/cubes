@@ -1,0 +1,14 @@
+{
+  "name": "@cubes/scripts",
+  "version": "0.0.1",
+  "type": "module",
+  "packageManager": "yarn@3.2.2",
+  "private": true,
+  "bin": {
+    "scripts:touch": "./touch-package.js"
+  },
+  "dependencies": {
+    "commander": "^9.4.0",
+    "scan-dir-recursive": "^1.0.11"
+  }
+}

@@ -5,11 +5,22 @@ __metadata:
   version: 6
   cacheKey: 8
 
+"@cubes/database@workspace:packages/modules/database":
+  version: 0.0.0-use.local
+  resolution: "@cubes/database@workspace:packages/modules/database"
+  dependencies:
+    "@cubes/tsr": "workspace:*"
+    esbuild: ^0.15.5
+    rimraf: ^3.0.2
+    typescript: ^4.7.4
+  languageName: unknown
+  linkType: soft
+
 "@cubes/droplet@workspace:packages/apps/droplet":
   version: 0.0.0-use.local
   resolution: "@cubes/droplet@workspace:packages/apps/droplet"
   dependencies:
-    "@cubes/tsrun": "workspace:*"
+    "@cubes/tsr": "workspace:*"
     "@tinyhttp/app": ^2.0.22
     esbuild: ^0.15.5
     rimraf: ^3.0.2
@@ -17,20 +28,25 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cubes/scripts@workspace:packages/modules/scripts":
+"@cubes/scripts@workspace:^, @cubes/scripts@workspace:packages/sdk/scripts":
   version: 0.0.0-use.local
-  resolution: "@cubes/scripts@workspace:packages/modules/scripts"
+  resolution: "@cubes/scripts@workspace:packages/sdk/scripts"
+  dependencies:
+    commander: ^9.4.0
+    scan-dir-recursive: ^1.0.11
+  bin:
+    "scripts:touch": ./touch-package.js
   languageName: unknown
   linkType: soft
 
-"@cubes/tsrun@workspace:*, @cubes/tsrun@workspace:packages/modules/tsrun":
+"@cubes/tsr@workspace:*, @cubes/tsr@workspace:packages/sdk/tsr":
   version: 0.0.0-use.local
-  resolution: "@cubes/tsrun@workspace:packages/modules/tsrun"
+  resolution: "@cubes/tsr@workspace:packages/sdk/tsr"
   dependencies:
     esbuild: ^0.15.5
     yargs: ^17.5.1
   bin:
-    tsrun: ./bin/
+    tsr: ./bin/
   languageName: unknown
   linkType: soft
 
@@ -250,6 +266,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"commander@npm:^9.4.0":
+  version: 9.4.0
+  resolution: "commander@npm:9.4.0"
+  checksum: a322de584a6ccd1ea83c24f6a660e52d16ffbe2613fcfbb8d2cc68bc9dec637492456d754fe8bb5b039ad843ed8e04fb0b107e581a75f62cde9e1a0ab1546e09
+  languageName: node
+  linkType: hard
+
 "concat-map@npm:0.0.1":
   version: 0.0.1
   resolution: "concat-map@npm:0.0.1"
@@ -261,7 +284,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "cubes@workspace:."
   dependencies:
-    "@cubes/tsrun": "workspace:*"
+    "@cubes/scripts": "workspace:^"
     "@types/node": ^18.7.9
     prettier: ^2.7.1
     typescript: ^4.7.4
@@ -606,7 +629,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimatch@npm:^3.1.1":
+"minimatch@npm:^3.0.4, minimatch@npm:^3.1.1":
   version: 3.1.2
   resolution: "minimatch@npm:3.1.2"
   dependencies:
@@ -669,6 +692,15 @@ __metadata:
   bin:
     rimraf: bin.js
   checksum: 87f4164e396f0171b0a3386cc1877a817f572148ee13a7e113b238e48e8a9f2f31d009a92ec38a591ff1567d9662c6b67fd8818a2dbbaed74bc26a87a2a4a9a0
+  languageName: node
+  linkType: hard
+
+"scan-dir-recursive@npm:^1.0.11":
+  version: 1.0.11
+  resolution: "scan-dir-recursive@npm:1.0.11"
+  dependencies:
+    minimatch: ^3.0.4
+  checksum: d3e80ddf895343e07519d1efcf643122abe02dd1dcd190dd5b2ea775261e19a4cea42d1da49a1e82c7e695af00f7149fb7ba088466f51777c058f4bbb16434e1
   languageName: node
   linkType: hard
 

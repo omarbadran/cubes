@@ -25,20 +25,25 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:packages/apps/droplet"\
       },\
       {\
-        "name": "@cubes/scripts",\
-        "reference": "workspace:packages/modules/scripts"\
+        "name": "@cubes/database",\
+        "reference": "workspace:packages/modules/database"\
       },\
       {\
-        "name": "@cubes/tsrun",\
-        "reference": "workspace:packages/modules/tsrun"\
+        "name": "@cubes/scripts",\
+        "reference": "workspace:packages/sdk/scripts"\
+      },\
+      {\
+        "name": "@cubes/tsr",\
+        "reference": "workspace:packages/sdk/tsr"\
       }\
     ],\
     "enableTopLevelFallback": true,\
     "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
     "fallbackExclusionList": [\
+      ["@cubes/database", ["workspace:packages/modules/database"]],\
       ["@cubes/droplet", ["workspace:packages/apps/droplet"]],\
-      ["@cubes/scripts", ["workspace:packages/modules/scripts"]],\
-      ["@cubes/tsrun", ["workspace:packages/modules/tsrun"]],\
+      ["@cubes/scripts", ["workspace:packages/sdk/scripts"]],\
+      ["@cubes/tsr", ["workspace:packages/sdk/tsr"]],\
       ["cubes", ["workspace:."]]\
     ],\
     "fallbackPool": [\
@@ -48,9 +53,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
-            ["@cubes/tsrun", "workspace:packages/modules/tsrun"],\
+            ["@cubes/scripts", "workspace:packages/sdk/scripts"],\
             ["@types/node", "npm:18.7.13"],\
             ["prettier", "npm:2.7.1"],\
+            ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=f456af"]\
+          ],\
+          "linkType": "SOFT"\
+        }]\
+      ]],\
+      ["@cubes/database", [\
+        ["workspace:packages/modules/database", {\
+          "packageLocation": "./packages/modules/database/",\
+          "packageDependencies": [\
+            ["@cubes/database", "workspace:packages/modules/database"],\
+            ["@cubes/tsr", "workspace:packages/sdk/tsr"],\
+            ["esbuild", "npm:0.15.5"],\
+            ["rimraf", "npm:3.0.2"],\
             ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=f456af"]\
           ],\
           "linkType": "SOFT"\
@@ -61,7 +79,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/apps/droplet/",\
           "packageDependencies": [\
             ["@cubes/droplet", "workspace:packages/apps/droplet"],\
-            ["@cubes/tsrun", "workspace:packages/modules/tsrun"],\
+            ["@cubes/tsr", "workspace:packages/sdk/tsr"],\
             ["@tinyhttp/app", "npm:2.0.22"],\
             ["esbuild", "npm:0.15.5"],\
             ["rimraf", "npm:3.0.2"],\
@@ -71,19 +89,21 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@cubes/scripts", [\
-        ["workspace:packages/modules/scripts", {\
-          "packageLocation": "./packages/modules/scripts/",\
+        ["workspace:packages/sdk/scripts", {\
+          "packageLocation": "./packages/sdk/scripts/",\
           "packageDependencies": [\
-            ["@cubes/scripts", "workspace:packages/modules/scripts"]\
+            ["@cubes/scripts", "workspace:packages/sdk/scripts"],\
+            ["commander", "npm:9.4.0"],\
+            ["scan-dir-recursive", "npm:1.0.11"]\
           ],\
           "linkType": "SOFT"\
         }]\
       ]],\
-      ["@cubes/tsrun", [\
-        ["workspace:packages/modules/tsrun", {\
-          "packageLocation": "./packages/modules/tsrun/",\
+      ["@cubes/tsr", [\
+        ["workspace:packages/sdk/tsr", {\
+          "packageLocation": "./packages/sdk/tsr/",\
           "packageDependencies": [\
-            ["@cubes/tsrun", "workspace:packages/modules/tsrun"],\
+            ["@cubes/tsr", "workspace:packages/sdk/tsr"],\
             ["esbuild", "npm:0.15.5"],\
             ["yargs", "npm:17.5.1"]\
           ],\
@@ -343,6 +363,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["commander", [\
+        ["npm:9.4.0", {\
+          "packageLocation": "./.yarn/cache/commander-npm-9.4.0-3cc611cdba-a322de584a.zip/node_modules/commander/",\
+          "packageDependencies": [\
+            ["commander", "npm:9.4.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["concat-map", [\
         ["npm:0.0.1", {\
           "packageLocation": "./.yarn/cache/concat-map-npm-0.0.1-85a921b7ee-902a9f5d89.zip/node_modules/concat-map/",\
@@ -357,7 +386,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["cubes", "workspace:."],\
-            ["@cubes/tsrun", "workspace:packages/modules/tsrun"],\
+            ["@cubes/scripts", "workspace:packages/sdk/scripts"],\
             ["@types/node", "npm:18.7.13"],\
             ["prettier", "npm:2.7.1"],\
             ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=f456af"]\
@@ -799,6 +828,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["rimraf", "npm:3.0.2"],\
             ["glob", "npm:7.2.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["scan-dir-recursive", [\
+        ["npm:1.0.11", {\
+          "packageLocation": "./.yarn/cache/scan-dir-recursive-npm-1.0.11-6332eeb006-d3e80ddf89.zip/node_modules/scan-dir-recursive/",\
+          "packageDependencies": [\
+            ["scan-dir-recursive", "npm:1.0.11"],\
+            ["minimatch", "npm:3.1.2"]\
           ],\
           "linkType": "HARD"\
         }]\
