@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import path, { dirname } from 'path';
+import path from 'path';
 import fs from 'fs';
 
 import { program } from 'commander';
@@ -15,17 +15,16 @@ program.parse();
 
 const options = program.opts();
 const [workspace, name] = options.name.split('/');
-const sample = path.join(dir, './sample');
-console.log(name);
+const sample = path.join(dir, '../sample');
 
 if (!['modules', 'apps', 'sdk'].includes(workspace) || name.length < 1) {
   throw new Error(
-    "You must provide the workspace and the package name, for example yarn newpkg -a='modules/hello'"
+    'You must provide the workspace and the package name, for example yarn newpkg -n modules/hello'
   );
 }
 
 const location = `packages/${workspace}/${name}`;
-const samples = scan(path.join(dir, './sample'));
+const samples = scan(path.join(dir, '../sample'));
 
 const files = samples.map((file) => {
   let content = fs.readFileSync(path.join(sample, file), 'utf-8');
