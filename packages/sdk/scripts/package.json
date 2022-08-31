@@ -5,7 +5,6 @@
   "packageManager": "yarn@3.2.2",
   "private": true,
   "bin": {
-    "compile": "./bin/compile/run.js",
     "mkpkg": "./bin/make-package.js"
   },
   "dependencies": {

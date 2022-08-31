@@ -3,19 +3,23 @@
   "version": "0.0.1",
   "type": "module",
   "private": true,
+  "input": "./src/index.ts",
   "main": "./dist/index.js",
-  "source": "./src/index.ts",
-  "types": "./dist/",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**"
+  ],
   "scripts": {
-    "build": "yarn clean & tsc",
+    "compile": "yarn clean && tsc",
+    "build": "yarn workspaces foreach -t -R run compile",
     "clean": "rimraf coverage dist tmp",
-    "start": "yarn build && node dist/index.js",
-    "dev": "tsc-watch --onSuccess 'node ./dist/index.js'",
+    "start": "node dist/index.js",
     "test": "tsr -f tests/all.test.ts"
   },
   "packageManager": "yarn@3.2.2",
   "devDependencies": {
     "@cubes/tsr": "workspace:*",
+    "@types/node": "^18.7.14",
     "rimraf": "^3.0.2",
     "tsc-watch": "^5.0.3",
     "typescript": "^4.7.4"

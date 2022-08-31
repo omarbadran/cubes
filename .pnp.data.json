@@ -120,6 +120,10 @@
                 "workspace:packages/sdk/tsr"
               ],
               [
+                "@types/node",
+                "npm:18.7.14"
+              ],
+              [
                 "hypercore-crypto",
                 "npm:3.3.0"
               ],
@@ -218,10 +222,6 @@
               [
                 "@cubes/crypto",
                 "workspace:packages/modules/crypto"
-              ],
-              [
-                "@cubes/scripts",
-                "workspace:packages/sdk/scripts"
               ],
               [
                 "@tinyhttp/app",
@@ -908,6 +908,19 @@
               [
                 "@types/node",
                 "npm:18.7.13"
+              ]
+            ],
+            "linkType": "HARD"
+          }
+        ],
+        [
+          "npm:18.7.14",
+          {
+            "packageLocation": "./.yarn/cache/@types-node-npm-18.7.14-8eae13b8f4-99cf28ff85.zip/node_modules/@types/node/",
+            "packageDependencies": [
+              [
+                "@types/node",
+                "npm:18.7.14"
               ]
             ],
             "linkType": "HARD"

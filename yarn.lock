@@ -10,6 +10,7 @@ __metadata:
   resolution: "@cubes/crypto@workspace:packages/modules/crypto"
   dependencies:
     "@cubes/tsr": "workspace:*"
+    "@types/node": ^18.7.14
     hypercore-crypto: ^3.3.0
     rimraf: ^3.0.2
     tsc-watch: ^5.0.3
@@ -40,7 +41,6 @@ __metadata:
   resolution: "@cubes/droplet@workspace:packages/apps/droplet"
   dependencies:
     "@cubes/crypto": "workspace:*"
-    "@cubes/scripts": "workspace:*"
     "@tinyhttp/app": ^2.0.22
     "@tinyhttp/cors": ^2.0.0
     jose: ^4.9.0
@@ -54,7 +54,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cubes/scripts@workspace:*, @cubes/scripts@workspace:^, @cubes/scripts@workspace:packages/sdk/scripts":
+"@cubes/scripts@workspace:^, @cubes/scripts@workspace:packages/sdk/scripts":
   version: 0.0.0-use.local
   resolution: "@cubes/scripts@workspace:packages/sdk/scripts"
   dependencies:
@@ -65,7 +65,6 @@ __metadata:
     scan-dir-recursive: ^1.0.11
     tiny-glob: ^0.2.9
   bin:
-    compile: ./bin/compile/run.js
     mkpkg: ./bin/make-package.js
   languageName: unknown
   linkType: soft
@@ -293,6 +292,13 @@ __metadata:
   version: 18.7.13
   resolution: "@types/node@npm:18.7.13"
   checksum: 45431e7e89ecaf85c7d2c180d801c132a7c59e2f8ad578726b6d71cc74e3267c18f9ccdcad738bc0479790c078f0c79efb0e58da2c6be535c15995dbb19050c9
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^18.7.14":
+  version: 18.7.14
+  resolution: "@types/node@npm:18.7.14"
+  checksum: 99cf28ff854100158de875cca23c7acc3cc01dfee526a52b90b7f36767c821bcbaf2be0a98a70f06f3b78f3c60639168ff949d725b61e2e124f9f71f1fb8043d
   languageName: node
   linkType: hard
 
