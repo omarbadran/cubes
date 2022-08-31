@@ -174,10 +174,6 @@
                 "npm:3.0.1"
               ],
               [
-                "esbuild",
-                "npm:0.15.5"
-              ],
-              [
                 "hyperbee",
                 "npm:1.10.1"
               ],
@@ -222,6 +218,10 @@
               [
                 "@cubes/crypto",
                 "workspace:packages/modules/crypto"
+              ],
+              [
+                "@cubes/tsr",
+                "workspace:packages/sdk/tsr"
               ],
               [
                 "@tinyhttp/app",
