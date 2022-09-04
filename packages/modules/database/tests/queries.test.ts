@@ -1,7 +1,7 @@
 import assert from 'node:assert';
 import test from 'node:test';
+import Database from '../src/index';
 
-import { createDB, createCore } from './misc/helpers';
 import { users, posts } from './misc/data';
 
 type Result = Array<{
@@ -9,11 +9,11 @@ type Result = Array<{
 }>;
 
 test('Skip & limit', async () => {
-  const db = createDB();
+  const db = new Database();
 
   await db.ready();
 
-  await db.initializeIndex('reactions', createCore());
+  await db.initializeIndex('reactions');
 
   let inserted: Result = [];
 
@@ -53,11 +53,11 @@ test('Skip & limit', async () => {
 });
 
 test('$eq, $gt, $lt, $lte, $gte', async () => {
-  const db = createDB();
+  const db = new Database();
 
   await db.ready();
 
-  await db.initializeIndex('age', createCore());
+  await db.initializeIndex('age');
 
   let inserted: Result = [];
   let values = [-100, -31.00245062, -1, 0, 1, 28, 28.0014, 45, 50, 50.140404, 5000];
@@ -111,11 +111,11 @@ test('$eq, $gt, $lt, $lte, $gte', async () => {
 });
 
 test('$between, $betweenInclusive', async () => {
-  const db = createDB();
+  const db = new Database();
 
   await db.ready();
 
-  await db.initializeIndex('age', createCore());
+  await db.initializeIndex('age');
 
   let inserted: Result = [];
   let values = [
@@ -172,11 +172,11 @@ test('$between, $betweenInclusive', async () => {
 });
 
 test('$containAny', async () => {
-  const db = createDB();
+  const db = new Database();
 
   await db.ready();
 
-  await db.initializeIndex('tags', createCore());
+  await db.initializeIndex('tags');
 
   let inserted: Result = [];
   let target = ['english'];
@@ -215,11 +215,11 @@ test('$containAny', async () => {
 });
 
 test('$containAll', async () => {
-  const db = createDB();
+  const db = new Database();
 
   await db.ready();
 
-  await db.initializeIndex('tags', createCore());
+  await db.initializeIndex('tags');
 
   let inserted: Result = [];
   let target = ['magical', 'crime'];

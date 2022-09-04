@@ -1,15 +1,18 @@
 import Hyperbee from 'hyperbee';
-import { leveldb } from 'cbor';
+import Hypercore from 'hypercore';
 import { ulid } from 'ulid';
-import * as charwise from 'charwise';
+import charwise from 'charwise';
 import { flatten, getFields } from './utils';
+import { leveldb } from 'cbor';
+import ram from 'random-access-memory';
 
 type Document = {
+  id?: string;
   [index: string]: any;
 };
 
 type Indexes = {
-  [index: string]: Hyperbee;
+  [index: string]: Hyperbee<string, string>;
 };
 
 export type Query = {
@@ -31,22 +34,29 @@ export type Query = {
   skip?: number;
 };
 
+const createBee = <K, V>(opts: object): Hyperbee<K, V> => {
+  const core = new Hypercore(ram);
+  const bee = new Hyperbee<K, V>(core, opts);
+
+  return bee;
+};
+
 /**
  * Database
  */
 export default class Database {
-  documents: Hyperbee;
+  documents: Hyperbee<string, Document>;
   indexes: Indexes;
   sep: string = '/';
 
   /**
    * Create a database.
    *
-   * @param core - a hypercore instance to store the documents
+   * @param factory - a function that returns a hyperbee-compatible interface with the given options.
    */
-  constructor(core: any) {
-    this.documents = new Hyperbee(core, {
-      keyEncoding: 'utf-8',
+  constructor(factory = createBee) {
+    this.documents = factory({
+      keyEncoding: 'utf8',
       valueEncoding: leveldb
     });
 
@@ -209,23 +219,19 @@ export default class Database {
    * Load an index to this database.
    *
    * @param field - the name of the field for this index.
-   * @param core - either a hypercore instance or a string to be used a sub bee.
+   * @param factory - a function that returns a hyperbee-compatible interface.
    * @returns True on success.
    * @public
    */
-  async initializeIndex(field: string, core?: any): Promise<boolean> {
+  async initializeIndex(field: string, factory = createBee): Promise<boolean> {
     if (field === 'id') {
       throw new Error('id is automaticly indexed');
     }
 
-    if (core) {
-      this.indexes[field] = new Hyperbee(core, {
-        keyEncoding: 'utf-8',
-        valueEncoding: 'utf-8'
-      });
-    } else {
-      this.indexes[field] = this.documents.sub('index.' + field);
-    }
+    this.indexes[field] = factory({
+      keyEncoding: 'utf8',
+      valueEncoding: 'utf8'
+    });
 
     await this.indexes[field].ready();
 
@@ -314,11 +320,11 @@ export default class Database {
       let { single, multi } = this.createIndexKeys(id, value);
 
       // single key
-      await this.indexes[field].del(single, id);
+      await this.indexes[field].del(single);
 
       // multi key
       for (let key of multi) {
-        await this.indexes[field].sub('multi').del(key, id);
+        await this.indexes[field].sub('multi').del(key);
       }
     }
 

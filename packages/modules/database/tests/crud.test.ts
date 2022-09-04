@@ -1,10 +1,9 @@
 import assert from 'node:assert';
 import test from 'node:test';
-
-import { createDB } from './misc/helpers';
+import Database from '../src/index';
 
 test('Create, read, update & delete a document', async (t) => {
-  const db = createDB();
+  const db = new Database();
 
   await db.ready();
 

@@ -1,10 +1,9 @@
 import assert from 'node:assert';
 import test from 'node:test';
-
-import { createDB, createCore } from './misc/helpers';
+import Database from '../src/index';
 
 test('Load an index', async (t) => {
-  const db = createDB();
+  const db = new Database();
 
   await db.ready();
 
@@ -16,13 +15,13 @@ test('Load an index', async (t) => {
 });
 
 test('Indexing and de-indexing documents', async (t) => {
-  const db = createDB();
+  const db = new Database();
 
   await db.ready();
 
   // initialize indexes
-  await db.initializeIndex('tags', createCore());
-  await db.initializeIndex('nested.age', createCore());
+  await db.initializeIndex('tags');
+  await db.initializeIndex('nested.age');
 
   // get index state
   const indexState = async (): Promise<{ age: number; tags: number }> => {
