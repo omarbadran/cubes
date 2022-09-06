@@ -23,6 +23,10 @@
       "reference": "workspace:packages/modules/database"
     },
     {
+      "name": "@cubes/drive",
+      "reference": "workspace:packages/modules/drive"
+    },
+    {
       "name": "@cubes/scripts",
       "reference": "workspace:packages/sdk/scripts"
     },
@@ -44,6 +48,12 @@
       "@cubes/database",
       [
         "workspace:packages/modules/database"
+      ]
+    ],
+    [
+      "@cubes/drive",
+      [
+        "workspace:packages/modules/drive"
       ]
     ],
     [
@@ -166,6 +176,14 @@
                 "npm:18.7.13"
               ],
               [
+                "autobase",
+                "https://github.com/hypercore-protocol/autobase.git#commit=d78016798f81636648ff2415fd7dd13eaccbf38b"
+              ],
+              [
+                "b4a",
+                "npm:1.6.0"
+              ],
+              [
                 "cbor",
                 "npm:8.1.0"
               ],
@@ -196,6 +214,68 @@
               [
                 "ulid",
                 "npm:2.3.0"
+              ]
+            ],
+            "linkType": "SOFT"
+          }
+        ]
+      ]
+    ],
+    [
+      "@cubes/drive",
+      [
+        [
+          "workspace:packages/modules/drive",
+          {
+            "packageLocation": "./packages/modules/drive/",
+            "packageDependencies": [
+              [
+                "@cubes/drive",
+                "workspace:packages/modules/drive"
+              ],
+              [
+                "@cubes/crypto",
+                "workspace:packages/modules/crypto"
+              ],
+              [
+                "@cubes/tsr",
+                "workspace:packages/sdk/tsr"
+              ],
+              [
+                "@types/node",
+                "npm:18.7.15"
+              ],
+              [
+                "b4a",
+                "npm:1.6.0"
+              ],
+              [
+                "compact-encoding",
+                "npm:2.11.0"
+              ],
+              [
+                "hypercore",
+                "npm:10.2.1"
+              ],
+              [
+                "hyperswarm",
+                "npm:3.0.4"
+              ],
+              [
+                "protomux-rpc",
+                "npm:1.3.0"
+              ],
+              [
+                "rimraf",
+                "npm:3.0.2"
+              ],
+              [
+                "tsc-watch",
+                "virtual:39999e8c689f3a107f1d7cc7d23f780dd6385794a2fa7a8c10949cbbd06b13eb79ae0a36ed884e862ab7b614473fb743ee8bd989d5b02a6e5890bee087f91c63#npm:5.0.3"
+              ],
+              [
+                "typescript",
+                "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=f456af"
               ]
             ],
             "linkType": "SOFT"
@@ -366,8 +446,127 @@
       ]
     ],
     [
+      "@hyperswarm/dht",
+      [
+        [
+          "npm:5.0.25",
+          {
+            "packageLocation": "./.yarn/cache/@hyperswarm-dht-npm-5.0.25-9478792c03-09ea7612aa.zip/node_modules/@hyperswarm/dht/",
+            "packageDependencies": [
+              [
+                "@hyperswarm/dht",
+                "npm:5.0.25"
+              ],
+              [
+                "@hyperswarm/secret-stream",
+                "npm:5.2.0"
+              ],
+              [
+                "b4a",
+                "npm:1.6.0"
+              ],
+              [
+                "bind-easy",
+                "npm:1.1.2"
+              ],
+              [
+                "bogon",
+                "npm:1.1.0"
+              ],
+              [
+                "compact-encoding",
+                "npm:2.11.0"
+              ],
+              [
+                "compact-encoding-net",
+                "npm:1.2.0"
+              ],
+              [
+                "debugging-stream",
+                "npm:2.0.0"
+              ],
+              [
+                "dht-rpc",
+                "npm:5.0.6"
+              ],
+              [
+                "noise-curve-ed",
+                "npm:1.0.4"
+              ],
+              [
+                "noise-handshake",
+                "npm:2.2.0"
+              ],
+              [
+                "record-cache",
+                "npm:1.2.0"
+              ],
+              [
+                "safety-catch",
+                "npm:1.0.2"
+              ],
+              [
+                "sodium-universal",
+                "npm:3.1.0"
+              ],
+              [
+                "utp-native",
+                "npm:2.5.3"
+              ],
+              [
+                "xache",
+                "npm:1.1.0"
+              ]
+            ],
+            "linkType": "HARD"
+          }
+        ]
+      ]
+    ],
+    [
       "@hyperswarm/secret-stream",
       [
+        [
+          "npm:5.2.0",
+          {
+            "packageLocation": "./.yarn/cache/@hyperswarm-secret-stream-npm-5.2.0-623e742f6e-12878b0199.zip/node_modules/@hyperswarm/secret-stream/",
+            "packageDependencies": [
+              [
+                "@hyperswarm/secret-stream",
+                "npm:5.2.0"
+              ],
+              [
+                "b4a",
+                "npm:1.6.0"
+              ],
+              [
+                "noise-curve-ed",
+                "npm:1.0.4"
+              ],
+              [
+                "noise-handshake",
+                "npm:2.2.0"
+              ],
+              [
+                "sodium-secretstream",
+                "npm:1.0.2"
+              ],
+              [
+                "sodium-universal",
+                "npm:3.1.0"
+              ],
+              [
+                "streamx",
+                "npm:2.12.5"
+              ],
+              [
+                "timeout-refresh",
+                "npm:2.0.1"
+              ]
+            ],
+            "linkType": "HARD"
+          }
+        ],
         [
           "npm:6.0.0",
           {
@@ -925,6 +1124,19 @@
             ],
             "linkType": "HARD"
           }
+        ],
+        [
+          "npm:18.7.15",
+          {
+            "packageLocation": "./.yarn/cache/@types-node-npm-18.7.15-3b77ff6bd6-1435fc7fe4.zip/node_modules/@types/node/",
+            "packageDependencies": [
+              [
+                "@types/node",
+                "npm:18.7.15"
+              ]
+            ],
+            "linkType": "HARD"
+          }
         ]
       ]
     ],
@@ -1135,6 +1347,52 @@
       ]
     ],
     [
+      "autobase",
+      [
+        [
+          "https://github.com/hypercore-protocol/autobase.git#commit=d78016798f81636648ff2415fd7dd13eaccbf38b",
+          {
+            "packageLocation": "./.yarn/cache/autobase-https-e72b0e57de-71adad91a8.zip/node_modules/autobase/",
+            "packageDependencies": [
+              [
+                "autobase",
+                "https://github.com/hypercore-protocol/autobase.git#commit=d78016798f81636648ff2415fd7dd13eaccbf38b"
+              ],
+              [
+                "b4a",
+                "npm:1.6.0"
+              ],
+              [
+                "codecs",
+                "npm:3.0.0"
+              ],
+              [
+                "compact-encoding",
+                "npm:2.11.0"
+              ],
+              [
+                "debounceify",
+                "npm:1.0.0"
+              ],
+              [
+                "mutexify",
+                "npm:1.4.0"
+              ],
+              [
+                "safety-catch",
+                "npm:1.0.2"
+              ],
+              [
+                "streamx",
+                "npm:2.12.5"
+              ]
+            ],
+            "linkType": "HARD"
+          }
+        ]
+      ]
+    ],
+    [
       "b4a",
       [
         [
@@ -1199,6 +1457,24 @@
               [
                 "binary-extensions",
                 "npm:2.2.0"
+              ]
+            ],
+            "linkType": "HARD"
+          }
+        ]
+      ]
+    ],
+    [
+      "bind-easy",
+      [
+        [
+          "npm:1.1.2",
+          {
+            "packageLocation": "./.yarn/cache/bind-easy-npm-1.1.2-8089986160-3229af35ba.zip/node_modules/bind-easy/",
+            "packageDependencies": [
+              [
+                "bind-easy",
+                "npm:1.1.2"
               ]
             ],
             "linkType": "HARD"
@@ -1273,6 +1549,36 @@
               [
                 "nanoassert",
                 "npm:2.0.0"
+              ]
+            ],
+            "linkType": "HARD"
+          }
+        ]
+      ]
+    ],
+    [
+      "bogon",
+      [
+        [
+          "npm:1.1.0",
+          {
+            "packageLocation": "./.yarn/cache/bogon-npm-1.1.0-bb7791a0e4-58a9bfb8a4.zip/node_modules/bogon/",
+            "packageDependencies": [
+              [
+                "bogon",
+                "npm:1.1.0"
+              ],
+              [
+                "b4a",
+                "npm:1.6.0"
+              ],
+              [
+                "compact-encoding",
+                "npm:2.11.0"
+              ],
+              [
+                "compact-encoding-net",
+                "npm:1.2.0"
               ]
             ],
             "linkType": "HARD"
@@ -1646,6 +1952,23 @@
             ],
             "linkType": "HARD"
           }
+        ],
+        [
+          "npm:3.0.0",
+          {
+            "packageLocation": "./.yarn/cache/codecs-npm-3.0.0-4067b301c1-ec00189d7d.zip/node_modules/codecs/",
+            "packageDependencies": [
+              [
+                "codecs",
+                "npm:3.0.0"
+              ],
+              [
+                "b4a",
+                "npm:1.6.0"
+              ]
+            ],
+            "linkType": "HARD"
+          }
         ]
       ]
     ],
@@ -1758,6 +2081,50 @@
               [
                 "b4a",
                 "npm:1.6.0"
+              ]
+            ],
+            "linkType": "HARD"
+          }
+        ]
+      ]
+    ],
+    [
+      "compact-encoding-bitfield",
+      [
+        [
+          "npm:1.0.0",
+          {
+            "packageLocation": "./.yarn/cache/compact-encoding-bitfield-npm-1.0.0-780c2fea29-2a08763e97.zip/node_modules/compact-encoding-bitfield/",
+            "packageDependencies": [
+              [
+                "compact-encoding-bitfield",
+                "npm:1.0.0"
+              ],
+              [
+                "compact-encoding",
+                "npm:2.11.0"
+              ]
+            ],
+            "linkType": "HARD"
+          }
+        ]
+      ]
+    ],
+    [
+      "compact-encoding-net",
+      [
+        [
+          "npm:1.2.0",
+          {
+            "packageLocation": "./.yarn/cache/compact-encoding-net-npm-1.2.0-73fe0c78e1-526efd2554.zip/node_modules/compact-encoding-net/",
+            "packageDependencies": [
+              [
+                "compact-encoding-net",
+                "npm:1.2.0"
+              ],
+              [
+                "compact-encoding",
+                "npm:2.11.0"
               ]
             ],
             "linkType": "HARD"
@@ -1888,6 +2255,24 @@
       ]
     ],
     [
+      "debounceify",
+      [
+        [
+          "npm:1.0.0",
+          {
+            "packageLocation": "./.yarn/cache/debounceify-npm-1.0.0-e1e0b7c9f8-ad8250c2f9.zip/node_modules/debounceify/",
+            "packageDependencies": [
+              [
+                "debounceify",
+                "npm:1.0.0"
+              ]
+            ],
+            "linkType": "HARD"
+          }
+        ]
+      ]
+    ],
+    [
       "debug",
       [
         [
@@ -1935,6 +2320,28 @@
       ]
     ],
     [
+      "debugging-stream",
+      [
+        [
+          "npm:2.0.0",
+          {
+            "packageLocation": "./.yarn/cache/debugging-stream-npm-2.0.0-6b7a001006-7eacc14c28.zip/node_modules/debugging-stream/",
+            "packageDependencies": [
+              [
+                "debugging-stream",
+                "npm:2.0.0"
+              ],
+              [
+                "streamx",
+                "npm:2.12.5"
+              ]
+            ],
+            "linkType": "HARD"
+          }
+        ]
+      ]
+    ],
+    [
       "delegates",
       [
         [
@@ -1963,6 +2370,64 @@
               [
                 "depd",
                 "npm:1.1.2"
+              ]
+            ],
+            "linkType": "HARD"
+          }
+        ]
+      ]
+    ],
+    [
+      "dht-rpc",
+      [
+        [
+          "npm:5.0.6",
+          {
+            "packageLocation": "./.yarn/cache/dht-rpc-npm-5.0.6-d01011cdbd-5ac2375a49.zip/node_modules/dht-rpc/",
+            "packageDependencies": [
+              [
+                "dht-rpc",
+                "npm:5.0.6"
+              ],
+              [
+                "b4a",
+                "npm:1.6.0"
+              ],
+              [
+                "bind-easy",
+                "npm:1.1.2"
+              ],
+              [
+                "compact-encoding",
+                "npm:2.11.0"
+              ],
+              [
+                "compact-encoding-net",
+                "npm:1.2.0"
+              ],
+              [
+                "fast-fifo",
+                "npm:1.1.0"
+              ],
+              [
+                "kademlia-routing-table",
+                "npm:1.0.1"
+              ],
+              [
+                "nat-sampler",
+                "npm:1.0.1"
+              ],
+              [
+                "sodium-universal",
+                "npm:3.1.0"
+              ],
+              [
+                "streamx",
+                "npm:2.12.5"
+              ],
+              [
+                "time-ordered-set",
+                "npm:1.0.2"
               ]
             ],
             "linkType": "HARD"
@@ -3416,6 +3881,91 @@
             ],
             "linkType": "HARD"
           }
+        ],
+        [
+          "npm:10.2.1",
+          {
+            "packageLocation": "./.yarn/cache/hypercore-npm-10.2.1-6f010c7f43-6b0ac88d6f.zip/node_modules/hypercore/",
+            "packageDependencies": [
+              [
+                "hypercore",
+                "npm:10.2.1"
+              ],
+              [
+                "@hyperswarm/secret-stream",
+                "npm:6.0.0"
+              ],
+              [
+                "b4a",
+                "npm:1.6.0"
+              ],
+              [
+                "big-sparse-array",
+                "npm:1.0.2"
+              ],
+              [
+                "bits-to-bytes",
+                "npm:1.3.0"
+              ],
+              [
+                "compact-encoding",
+                "npm:2.11.0"
+              ],
+              [
+                "crc32-universal",
+                "npm:1.0.1"
+              ],
+              [
+                "events",
+                "npm:3.3.0"
+              ],
+              [
+                "flat-tree",
+                "npm:1.9.0"
+              ],
+              [
+                "hypercore-crypto",
+                "npm:3.3.0"
+              ],
+              [
+                "is-options",
+                "npm:1.0.2"
+              ],
+              [
+                "protomux",
+                "npm:3.4.0"
+              ],
+              [
+                "random-access-file",
+                "npm:3.2.2"
+              ],
+              [
+                "random-array-iterator",
+                "npm:1.0.0"
+              ],
+              [
+                "safety-catch",
+                "npm:1.0.2"
+              ],
+              [
+                "sodium-universal",
+                "npm:3.1.0"
+              ],
+              [
+                "streamx",
+                "npm:2.12.5"
+              ],
+              [
+                "xache",
+                "npm:1.1.0"
+              ],
+              [
+                "z32",
+                "npm:1.0.0"
+              ]
+            ],
+            "linkType": "HARD"
+          }
         ]
       ]
     ],
@@ -3468,6 +4018,40 @@
               [
                 "inspect-custom-symbol",
                 "npm:1.1.1"
+              ]
+            ],
+            "linkType": "HARD"
+          }
+        ]
+      ]
+    ],
+    [
+      "hyperswarm",
+      [
+        [
+          "npm:3.0.4",
+          {
+            "packageLocation": "./.yarn/cache/hyperswarm-npm-3.0.4-1e799cc50f-ff500ca0d2.zip/node_modules/hyperswarm/",
+            "packageDependencies": [
+              [
+                "hyperswarm",
+                "npm:3.0.4"
+              ],
+              [
+                "@hyperswarm/dht",
+                "npm:5.0.25"
+              ],
+              [
+                "b4a",
+                "npm:1.6.0"
+              ],
+              [
+                "events",
+                "npm:3.3.0"
+              ],
+              [
+                "shuffled-priority-queue",
+                "npm:2.1.0"
               ]
             ],
             "linkType": "HARD"
@@ -3838,6 +4422,24 @@
               [
                 "jose",
                 "npm:4.9.0"
+              ]
+            ],
+            "linkType": "HARD"
+          }
+        ]
+      ]
+    ],
+    [
+      "kademlia-routing-table",
+      [
+        [
+          "npm:1.0.1",
+          {
+            "packageLocation": "./.yarn/cache/kademlia-routing-table-npm-1.0.1-19cc217ea3-8431cd0fb4.zip/node_modules/kademlia-routing-table/",
+            "packageDependencies": [
+              [
+                "kademlia-routing-table",
+                "npm:1.0.1"
               ]
             ],
             "linkType": "HARD"
@@ -4338,6 +4940,24 @@
               [
                 "napi-macros",
                 "npm:2.0.0"
+              ]
+            ],
+            "linkType": "HARD"
+          }
+        ]
+      ]
+    ],
+    [
+      "nat-sampler",
+      [
+        [
+          "npm:1.0.1",
+          {
+            "packageLocation": "./.yarn/cache/nat-sampler-npm-1.0.1-22902e59e7-ea3f0ad40e.zip/node_modules/nat-sampler/",
+            "packageDependencies": [
+              [
+                "nat-sampler",
+                "npm:1.0.1"
               ]
             ],
             "linkType": "HARD"
@@ -4899,6 +5519,69 @@
             ],
             "linkType": "HARD"
           }
+        ],
+        [
+          "npm:3.4.0",
+          {
+            "packageLocation": "./.yarn/cache/protomux-npm-3.4.0-0fe9ba258e-b836909aa2.zip/node_modules/protomux/",
+            "packageDependencies": [
+              [
+                "protomux",
+                "npm:3.4.0"
+              ],
+              [
+                "b4a",
+                "npm:1.6.0"
+              ],
+              [
+                "compact-encoding",
+                "npm:2.11.0"
+              ],
+              [
+                "queue-tick",
+                "npm:1.0.0"
+              ],
+              [
+                "safety-catch",
+                "npm:1.0.2"
+              ]
+            ],
+            "linkType": "HARD"
+          }
+        ]
+      ]
+    ],
+    [
+      "protomux-rpc",
+      [
+        [
+          "npm:1.3.0",
+          {
+            "packageLocation": "./.yarn/cache/protomux-rpc-npm-1.3.0-acc7e2f8c4-bb2d8c0138.zip/node_modules/protomux-rpc/",
+            "packageDependencies": [
+              [
+                "protomux-rpc",
+                "npm:1.3.0"
+              ],
+              [
+                "bits-to-bytes",
+                "npm:1.3.0"
+              ],
+              [
+                "compact-encoding",
+                "npm:2.11.0"
+              ],
+              [
+                "compact-encoding-bitfield",
+                "npm:1.0.0"
+              ],
+              [
+                "protomux",
+                "npm:3.4.0"
+              ]
+            ],
+            "linkType": "HARD"
+          }
         ]
       ]
     ],
@@ -5087,6 +5770,28 @@
               [
                 "picomatch",
                 "npm:2.3.1"
+              ]
+            ],
+            "linkType": "HARD"
+          }
+        ]
+      ]
+    ],
+    [
+      "record-cache",
+      [
+        [
+          "npm:1.2.0",
+          {
+            "packageLocation": "./.yarn/cache/record-cache-npm-1.2.0-d60175cf3c-8dc293a413.zip/node_modules/record-cache/",
+            "packageDependencies": [
+              [
+                "record-cache",
+                "npm:1.2.0"
+              ],
+              [
+                "b4a",
+                "npm:1.6.0"
               ]
             ],
             "linkType": "HARD"
@@ -5453,6 +6158,28 @@
               [
                 "shebang-regex",
                 "npm:3.0.0"
+              ]
+            ],
+            "linkType": "HARD"
+          }
+        ]
+      ]
+    ],
+    [
+      "shuffled-priority-queue",
+      [
+        [
+          "npm:2.1.0",
+          {
+            "packageLocation": "./.yarn/cache/shuffled-priority-queue-npm-2.1.0-8751b5df30-4353b6ceb4.zip/node_modules/shuffled-priority-queue/",
+            "packageDependencies": [
+              [
+                "shuffled-priority-queue",
+                "npm:2.1.0"
+              ],
+              [
+                "unordered-set",
+                "npm:2.0.1"
               ]
             ],
             "linkType": "HARD"
@@ -6015,8 +6742,39 @@
       ]
     ],
     [
+      "time-ordered-set",
+      [
+        [
+          "npm:1.0.2",
+          {
+            "packageLocation": "./.yarn/cache/time-ordered-set-npm-1.0.2-9225f00016-7a72966100.zip/node_modules/time-ordered-set/",
+            "packageDependencies": [
+              [
+                "time-ordered-set",
+                "npm:1.0.2"
+              ]
+            ],
+            "linkType": "HARD"
+          }
+        ]
+      ]
+    ],
+    [
       "timeout-refresh",
       [
+        [
+          "npm:1.0.3",
+          {
+            "packageLocation": "./.yarn/cache/timeout-refresh-npm-1.0.3-940339c80a-ecf013bd99.zip/node_modules/timeout-refresh/",
+            "packageDependencies": [
+              [
+                "timeout-refresh",
+                "npm:1.0.3"
+              ]
+            ],
+            "linkType": "HARD"
+          }
+        ],
         [
           "npm:2.0.1",
           {
@@ -6224,6 +6982,24 @@
       ]
     ],
     [
+      "unordered-set",
+      [
+        [
+          "npm:2.0.1",
+          {
+            "packageLocation": "./.yarn/cache/unordered-set-npm-2.0.1-54a9130390-c9242a55e2.zip/node_modules/unordered-set/",
+            "packageDependencies": [
+              [
+                "unordered-set",
+                "npm:2.0.1"
+              ]
+            ],
+            "linkType": "HARD"
+          }
+        ]
+      ]
+    ],
+    [
       "util-deprecate",
       [
         [
@@ -6234,6 +7010,48 @@
               [
                 "util-deprecate",
                 "npm:1.0.2"
+              ]
+            ],
+            "linkType": "HARD"
+          }
+        ]
+      ]
+    ],
+    [
+      "utp-native",
+      [
+        [
+          "npm:2.5.3",
+          {
+            "packageLocation": "./.yarn/unplugged/utp-native-npm-2.5.3-6263dd77af/node_modules/utp-native/",
+            "packageDependencies": [
+              [
+                "utp-native",
+                "npm:2.5.3"
+              ],
+              [
+                "napi-macros",
+                "npm:2.0.0"
+              ],
+              [
+                "node-gyp",
+                "npm:9.1.0"
+              ],
+              [
+                "node-gyp-build",
+                "npm:4.5.0"
+              ],
+              [
+                "readable-stream",
+                "npm:3.6.0"
+              ],
+              [
+                "timeout-refresh",
+                "npm:1.0.3"
+              ],
+              [
+                "unordered-set",
+                "npm:2.0.1"
               ]
             ],
             "linkType": "HARD"

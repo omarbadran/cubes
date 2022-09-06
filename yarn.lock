@@ -24,6 +24,8 @@ __metadata:
   dependencies:
     "@cubes/tsr": "workspace:*"
     "@types/node": ^18.7.13
+    autobase: "github:hypercore-protocol/autobase"
+    b4a: ^1.6.0
     cbor: ^8.1.0
     charwise: ^3.0.1
     hyperbee: ^1.10.1
@@ -32,6 +34,24 @@ __metadata:
     rimraf: ^3.0.2
     typescript: ^4.7.4
     ulid: ^2.3.0
+  languageName: unknown
+  linkType: soft
+
+"@cubes/drive@workspace:packages/modules/drive":
+  version: 0.0.0-use.local
+  resolution: "@cubes/drive@workspace:packages/modules/drive"
+  dependencies:
+    "@cubes/crypto": "workspace:*"
+    "@cubes/tsr": "workspace:*"
+    "@types/node": ^18.7.15
+    b4a: ^1.6.0
+    compact-encoding: ^2.11.0
+    hypercore: ^10.2.1
+    hyperswarm: next
+    protomux-rpc: ^1.3.0
+    rimraf: ^3.0.2
+    tsc-watch: ^5.0.3
+    typescript: ^4.7.4
   languageName: unknown
   linkType: soft
 
@@ -89,6 +109,44 @@ __metadata:
   version: 1.1.3
   resolution: "@gar/promisify@npm:1.1.3"
   checksum: 4059f790e2d07bf3c3ff3e0fec0daa8144fe35c1f6e0111c9921bd32106adaa97a4ab096ad7dab1e28ee6a9060083c4d1a4ada42a7f5f3f7a96b8812e2b757c1
+  languageName: node
+  linkType: hard
+
+"@hyperswarm/dht@npm:next":
+  version: 5.0.25
+  resolution: "@hyperswarm/dht@npm:5.0.25"
+  dependencies:
+    "@hyperswarm/secret-stream": ^5.1.0
+    b4a: ^1.3.1
+    bind-easy: ^1.0.1
+    bogon: ^1.0.0
+    compact-encoding: ^2.4.1
+    compact-encoding-net: ^1.0.1
+    debugging-stream: ^2.0.0
+    dht-rpc: ^5.0.1
+    noise-curve-ed: ^1.0.2
+    noise-handshake: ^2.1.0
+    record-cache: ^1.1.1
+    safety-catch: ^1.0.1
+    sodium-universal: ^3.0.4
+    utp-native: ^2.5.3
+    xache: ^1.0.0
+  checksum: 09ea7612aa39082fbf961f793e8b307afe5aab63fd9303267aab2d56d1a1838eccd1550414c7125475a003bd7af2215b17821cd94df99e52598c7f9324ae7923
+  languageName: node
+  linkType: hard
+
+"@hyperswarm/secret-stream@npm:^5.1.0":
+  version: 5.2.0
+  resolution: "@hyperswarm/secret-stream@npm:5.2.0"
+  dependencies:
+    b4a: ^1.1.0
+    noise-curve-ed: ^1.0.2
+    noise-handshake: ^2.1.0
+    sodium-secretstream: ^1.0.0
+    sodium-universal: ^3.0.4
+    streamx: ^2.10.2
+    timeout-refresh: ^2.0.0
+  checksum: 12878b0199bfb4225105ecb0f56910400ac576c790c604dbf60abe518206ae25e0b4f7c7dd67abef600699440f093184d3b1d69f5874d064a43c1badac4afa93
   languageName: node
   linkType: hard
 
@@ -300,6 +358,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:^18.7.15":
+  version: 18.7.15
+  resolution: "@types/node@npm:18.7.15"
+  checksum: 1435fc7fe44744467a3ba8ace646455be228516530dbb3db64a03cca6abcfdc5ba2e48a3eafc71f25f836d2ca871132361c58a5e760237a53674cb09151147d9
+  languageName: node
+  linkType: hard
+
 "abbrev@npm:1":
   version: 1.1.1
   resolution: "abbrev@npm:1.1.1"
@@ -380,7 +445,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"b4a@npm:^1.0.1, b4a@npm:^1.1.0, b4a@npm:^1.1.1, b4a@npm:^1.3.0, b4a@npm:^1.3.1, b4a@npm:^1.5.0, b4a@npm:^1.5.3, b4a@npm:^1.6.0":
+"autobase@github:hypercore-protocol/autobase":
+  version: 1.0.0-alpha.8
+  resolution: "autobase@https://github.com/hypercore-protocol/autobase.git#commit=d78016798f81636648ff2415fd7dd13eaccbf38b"
+  dependencies:
+    b4a: ^1.3.1
+    codecs: ^3.0.0
+    compact-encoding: ^2.0.0
+    debounceify: ^1.0.0
+    mutexify: ^1.4.0
+    safety-catch: ^1.0.1
+    streamx: ^2.10.0
+  checksum: 71adad91a850141a63c5944ac8c919477d72302041e2ea86c0294946132f3d7531e76a458bbd18fb0bfdf6eabe8c335ec75d931864c6dc5a1268e59d883072ce
+  languageName: node
+  linkType: hard
+
+"b4a@npm:*, b4a@npm:^1.0.1, b4a@npm:^1.1.0, b4a@npm:^1.1.1, b4a@npm:^1.3.0, b4a@npm:^1.3.1, b4a@npm:^1.5.0, b4a@npm:^1.5.3, b4a@npm:^1.6.0":
   version: 1.6.0
   resolution: "b4a@npm:1.6.0"
   checksum: 7b07ecbcd485e5e03ae4903463e35e06c540aad344ea0e9e291e2da11adbbbff0a4836c74a700233fd7c8f57fdb00b80cefa64e9425aa966ed327734dd0e0acb
@@ -408,7 +488,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bits-to-bytes@npm:^1.3.0":
+"bind-easy@npm:^1.0.0, bind-easy@npm:^1.0.1":
+  version: 1.1.2
+  resolution: "bind-easy@npm:1.1.2"
+  checksum: 3229af35ba44762cb6c82844e4a390c231ac469c5788a7ac71f17ea448a647b9342e2e7c381a4999e6445fe32dbf8eacb19576bb3a85db283c362f3d3051c029
+  languageName: node
+  linkType: hard
+
+"bits-to-bytes@npm:^1.0.0, bits-to-bytes@npm:^1.3.0":
   version: 1.3.0
   resolution: "bits-to-bytes@npm:1.3.0"
   dependencies:
@@ -434,6 +521,16 @@ __metadata:
     blake2b-wasm: ^2.4.0
     nanoassert: ^2.0.0
   checksum: cd598c96d459017714b7f9cb8892ef2b0a94f362e26e6baa46b7b8b189af0006ce25ab1713e3ec1484eb18ce7ebe1eb24e07d01e42ab1147067de2419c7f6158
+  languageName: node
+  linkType: hard
+
+"bogon@npm:^1.0.0":
+  version: 1.1.0
+  resolution: "bogon@npm:1.1.0"
+  dependencies:
+    compact-encoding: ^2.11.0
+    compact-encoding-net: ^1.2.0
+  checksum: 58a9bfb8a495672fec41449e5a1210ec5f9804d0c0d0df0418f5fd53993a612889ca73eda9e4f165a66ae9670d9da90f63c60ec95df00adb83934fc859baf567
   languageName: node
   linkType: hard
 
@@ -574,6 +671,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"codecs@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "codecs@npm:3.0.0"
+  dependencies:
+    b4a: ^1.1.1
+  checksum: ec00189d7d60d3d0aa75e210933734ad20a91c9e28cf7503e0c98f6c8ebe02fba2b07d3b3776fe4ee1b5aeee97d5d69069e8a50096a79b23a2789249f4a1d507
+  languageName: node
+  linkType: hard
+
 "color-convert@npm:^2.0.1":
   version: 2.0.1
   resolution: "color-convert@npm:2.0.1"
@@ -613,7 +719,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"compact-encoding@npm:^2.11.0, compact-encoding@npm:^2.5.1":
+"compact-encoding-bitfield@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "compact-encoding-bitfield@npm:1.0.0"
+  dependencies:
+    compact-encoding: ^2.4.1
+  checksum: 2a08763e974c7b1b3b90f40d8053a78a41e0fb8da03d9a559e29d1c688f200ff6c6f306a954865b4d35ec0cc1ff0956c9c6fd0f4738db09b8015a26165b6e537
+  languageName: node
+  linkType: hard
+
+"compact-encoding-net@npm:^1.0.1, compact-encoding-net@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "compact-encoding-net@npm:1.2.0"
+  dependencies:
+    compact-encoding: ^2.4.1
+  checksum: 526efd25545b02d66ee0da64754bf57938150187beb5431de869a17fe18d73b547d5f026f9042a0ba894a3c9a0e9ec07ef99fc29a49535bdd68802af0dcc6c0f
+  languageName: node
+  linkType: hard
+
+"compact-encoding@npm:^2.0.0, compact-encoding@npm:^2.1.0, compact-encoding@npm:^2.11.0, compact-encoding@npm:^2.4.1, compact-encoding@npm:^2.5.1, compact-encoding@npm:^2.6.1":
   version: 2.11.0
   resolution: "compact-encoding@npm:2.11.0"
   dependencies:
@@ -667,6 +791,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"debounceify@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "debounceify@npm:1.0.0"
+  checksum: ad8250c2f9467a72a05021213014e1b0350dbc71bc2231e3ea5a1275c0f6cd439c9573f4ccabf5109fe08903243cadc9f92404e9769e89ef966b133af605c77e
+  languageName: node
+  linkType: hard
+
 "debug@npm:4, debug@npm:^4.1.0, debug@npm:^4.3.3":
   version: 4.3.4
   resolution: "debug@npm:4.3.4"
@@ -676,6 +807,15 @@ __metadata:
     supports-color:
       optional: true
   checksum: 3dbad3f94ea64f34431a9cbf0bafb61853eda57bff2880036153438f50fb5a84f27683ba0d8e5426bf41a8c6ff03879488120cf5b3a761e77953169c0600a708
+  languageName: node
+  linkType: hard
+
+"debugging-stream@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "debugging-stream@npm:2.0.0"
+  dependencies:
+    streamx: ^2.12.4
+  checksum: 7eacc14c28644ce15d9ea3f77f7c95ed85a3c18a8beeda57c53fa5abc5427a81445def6ea13bcc71295ee9e848231b3d9cf3390fe23140557ee2c7224d0aed54
   languageName: node
   linkType: hard
 
@@ -690,6 +830,24 @@ __metadata:
   version: 1.1.2
   resolution: "depd@npm:1.1.2"
   checksum: 6b406620d269619852885ce15965272b829df6f409724415e0002c8632ab6a8c0a08ec1f0bd2add05dc7bd7507606f7e2cc034fa24224ab829580040b835ecd9
+  languageName: node
+  linkType: hard
+
+"dht-rpc@npm:^5.0.1":
+  version: 5.0.6
+  resolution: "dht-rpc@npm:5.0.6"
+  dependencies:
+    b4a: ^1.3.1
+    bind-easy: ^1.0.0
+    compact-encoding: ^2.1.0
+    compact-encoding-net: ^1.0.1
+    fast-fifo: ^1.0.0
+    kademlia-routing-table: ^1.0.0
+    nat-sampler: ^1.0.1
+    sodium-universal: ^3.0.4
+    streamx: ^2.10.3
+    time-ordered-set: ^1.0.2
+  checksum: 5ac2375a49301052522facf5e693ae8bcf66557129e6e5e49cdcb6e2846fc045d6b702bcdc341927d9f914e74d9aa98ac5ca94ea7d907345b2a4af5aed01155b
   languageName: node
   linkType: hard
 
@@ -1304,6 +1462,44 @@ __metadata:
   languageName: node
   linkType: hard
 
+"hypercore@npm:^10.2.1":
+  version: 10.2.1
+  resolution: "hypercore@npm:10.2.1"
+  dependencies:
+    "@hyperswarm/secret-stream": ^6.0.0
+    b4a: ^1.1.0
+    big-sparse-array: ^1.0.2
+    bits-to-bytes: ^1.3.0
+    compact-encoding: ^2.11.0
+    crc32-universal: ^1.0.1
+    events: ^3.3.0
+    flat-tree: ^1.9.0
+    hypercore-crypto: ^3.2.1
+    is-options: ^1.0.1
+    protomux: ^3.4.0
+    random-access-file: ^3.2.2
+    random-array-iterator: ^1.0.0
+    safety-catch: ^1.0.1
+    sodium-universal: ^3.0.4
+    streamx: ^2.12.4
+    xache: ^1.1.0
+    z32: ^1.0.0
+  checksum: 6b0ac88d6fd71c75a14f4671a51c42ba4f97c0d7dfa70fdf8a7aaaaae3821110b4a8393fa611ed8caf872fdfe8608f33f2dfb6eb25cbede27ef99d4582a63d26
+  languageName: node
+  linkType: hard
+
+"hyperswarm@npm:next":
+  version: 3.0.4
+  resolution: "hyperswarm@npm:3.0.4"
+  dependencies:
+    "@hyperswarm/dht": next
+    b4a: ^1.3.1
+    events: ^3.3.0
+    shuffled-priority-queue: ^2.1.0
+  checksum: ff500ca0d2a98a16db30761bc864beb054c0685714e3716d6a394a2f56114ca826e630a329e39adbb5f6191e979825ee2483b5f2ca0193d90bb242778df67d2c
+  languageName: node
+  linkType: hard
+
 "iconv-lite@npm:^0.6.2":
   version: 0.6.3
   resolution: "iconv-lite@npm:0.6.3"
@@ -1447,6 +1643,13 @@ __metadata:
   version: 4.9.0
   resolution: "jose@npm:4.9.0"
   checksum: fc1e71f49327206eb58b23a2c5d463c3b1c84cd60ba2b8f8ab74db4a96ec079915fc71bc8b7d57d77b25d1426cd02eb218bf426738e803ab1a52adc1d96d0912
+  languageName: node
+  linkType: hard
+
+"kademlia-routing-table@npm:^1.0.0":
+  version: 1.0.1
+  resolution: "kademlia-routing-table@npm:1.0.1"
+  checksum: 8431cd0fb4a642ba83becd569da3d804a60dc67d5b95bdb5a0beb6ea26a56d5e71e560636f9a91a3ee24c1289b03fb0fddc5a5c023f8f3c6958f695f541b9214
   languageName: node
   linkType: hard
 
@@ -1622,7 +1825,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mutexify@npm:^1.3.1":
+"mutexify@npm:^1.3.1, mutexify@npm:^1.4.0":
   version: 1.4.0
   resolution: "mutexify@npm:1.4.0"
   dependencies:
@@ -1652,6 +1855,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"nat-sampler@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "nat-sampler@npm:1.0.1"
+  checksum: ea3f0ad40e7ffbae212665bb24a13bacbd4040128a7600224f23ae8eeef2c3dd53a8d49f759e8b34127b2f163c91a290409d2a88b9ee53265aac78be2859ff99
+  languageName: node
+  linkType: hard
+
 "negotiator@npm:^0.6.2, negotiator@npm:^0.6.3":
   version: 0.6.3
   resolution: "negotiator@npm:0.6.3"
@@ -1666,7 +1876,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-gyp-build@npm:^4.2.3, node-gyp-build@npm:^4.3.0":
+"node-gyp-build@npm:^4.2.0, node-gyp-build@npm:^4.2.3, node-gyp-build@npm:^4.3.0":
   version: 4.5.0
   resolution: "node-gyp-build@npm:4.5.0"
   bin:
@@ -1849,6 +2059,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"protomux-rpc@npm:^1.3.0":
+  version: 1.3.0
+  resolution: "protomux-rpc@npm:1.3.0"
+  dependencies:
+    bits-to-bytes: ^1.0.0
+    compact-encoding: ^2.6.1
+    compact-encoding-bitfield: ^1.0.0
+    protomux: ^3.2.1
+  checksum: bb2d8c0138329a866bbbe236e8df758bc5cf7188feb191cea51e5328d35b88839e7f2fd3fd339ff3e2e90347d801ddbc118ff690b022a25a6b7f998dfeb82372
+  languageName: node
+  linkType: hard
+
 "protomux@npm:^3.2.0":
   version: 3.3.0
   resolution: "protomux@npm:3.3.0"
@@ -1858,6 +2080,18 @@ __metadata:
     queue-tick: ^1.0.0
     safety-catch: ^1.0.1
   checksum: ab2cde10186b2d9d77d9f5db9dadf6de81260f8ef1d87218a48f8d6496c5d4527f15591a7d9868b446fb826a527484082f5aa4fc9bc85dd6870f8c1658e97502
+  languageName: node
+  linkType: hard
+
+"protomux@npm:^3.2.1, protomux@npm:^3.4.0":
+  version: 3.4.0
+  resolution: "protomux@npm:3.4.0"
+  dependencies:
+    b4a: ^1.3.1
+    compact-encoding: ^2.5.1
+    queue-tick: ^1.0.0
+    safety-catch: ^1.0.1
+  checksum: b836909aa2d0b9ad14295a81730ec04f718def8dfcd963b6314161eba5eb12cd3a65dc780c1650f69f895a167f6493ff59025f343204f2cf6a25edeb15214166
   languageName: node
   linkType: hard
 
@@ -1920,7 +2154,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"readable-stream@npm:^3.6.0":
+"readable-stream@npm:^3.0.2, readable-stream@npm:^3.6.0":
   version: 3.6.0
   resolution: "readable-stream@npm:3.6.0"
   dependencies:
@@ -1937,6 +2171,15 @@ __metadata:
   dependencies:
     picomatch: ^2.2.1
   checksum: 1ced032e6e45670b6d7352d71d21ce7edf7b9b928494dcaba6f11fba63180d9da6cd7061ebc34175ffda6ff529f481818c962952004d273178acd70f7059b320
+  languageName: node
+  linkType: hard
+
+"record-cache@npm:^1.1.1":
+  version: 1.2.0
+  resolution: "record-cache@npm:1.2.0"
+  dependencies:
+    b4a: ^1.3.1
+  checksum: 8dc293a4133a0f6151b30a2d7d5b9a0608d9cca8ece34030c2631841f15355299af482d28ad6aaf123e08d9fd4dff2575449e6ad55b1c352a67c019d63bf0ec0
   languageName: node
   linkType: hard
 
@@ -2102,6 +2345,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"shuffled-priority-queue@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "shuffled-priority-queue@npm:2.1.0"
+  dependencies:
+    unordered-set: ^2.0.1
+  checksum: 4353b6ceb4138e126f65c9e51a473e5870f154c04f3fc4880f2543ab360bb4ee0bb212d5d32f71d767d0b3a960b87996648cadde21f8d77cfe6cd3b24ee59e0c
+  languageName: node
+  linkType: hard
+
 "signal-exit@npm:^3.0.7":
   version: 3.0.7
   resolution: "signal-exit@npm:3.0.7"
@@ -2235,7 +2487,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"streamx@npm:^2.10.2, streamx@npm:^2.12.4, streamx@npm:^2.6.6":
+"streamx@npm:^2.10.0, streamx@npm:^2.10.2, streamx@npm:^2.10.3, streamx@npm:^2.12.4, streamx@npm:^2.6.6":
   version: 2.12.5
   resolution: "streamx@npm:2.12.5"
   dependencies:
@@ -2306,6 +2558,20 @@ __metadata:
   version: 2.3.8
   resolution: "through@npm:2.3.8"
   checksum: a38c3e059853c494af95d50c072b83f8b676a9ba2818dcc5b108ef252230735c54e0185437618596c790bbba8fcdaef5b290405981ffa09dce67b1f1bf190cbd
+  languageName: node
+  linkType: hard
+
+"time-ordered-set@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "time-ordered-set@npm:1.0.2"
+  checksum: 7a72966100097c228324196a1f05c2878b5d3119741d7b422959587db97375723ffae267885e8056c4923c3666162c02ad555b9baf65867f748a098f88b56d73
+  languageName: node
+  linkType: hard
+
+"timeout-refresh@npm:^1.0.0":
+  version: 1.0.3
+  resolution: "timeout-refresh@npm:1.0.3"
+  checksum: ecf013bd998beb641ff0b17031393443d9358f2439126f5c6fcf257760d00dc91abc720786c371f1d6cc2ae5ec8093bd258a6ca1dcf6ae5a5add4841443a882b
   languageName: node
   linkType: hard
 
@@ -2399,10 +2665,33 @@ __metadata:
   languageName: node
   linkType: hard
 
+"unordered-set@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "unordered-set@npm:2.0.1"
+  checksum: c9242a55e2a8445136ce9fba5a37cd15d0463f5a69060c79622b2488aa127b2413ddb44010c462df1deb613bfa609e2f572ab0d6b918c3f83697631ea987c833
+  languageName: node
+  linkType: hard
+
 "util-deprecate@npm:^1.0.1":
   version: 1.0.2
   resolution: "util-deprecate@npm:1.0.2"
   checksum: 474acf1146cb2701fe3b074892217553dfcf9a031280919ba1b8d651a068c9b15d863b7303cb15bd00a862b498e6cf4ad7b4a08fb134edd5a6f7641681cb54a2
+  languageName: node
+  linkType: hard
+
+"utp-native@npm:^2.5.3":
+  version: 2.5.3
+  resolution: "utp-native@npm:2.5.3"
+  dependencies:
+    napi-macros: ^2.0.0
+    node-gyp: latest
+    node-gyp-build: ^4.2.0
+    readable-stream: ^3.0.2
+    timeout-refresh: ^1.0.0
+    unordered-set: ^2.0.1
+  bin:
+    ucat: ucat.js
+  checksum: 2be574eb18fc7394b7d23a18ef6f5aabf879d3f6a5727b7928abf53fb3fdbf783cfe70a1bf342ea306f55868583e4f419fd5288d2b8c2312a8d77d2af15a4244
   languageName: node
   linkType: hard
 
@@ -2458,7 +2747,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"xache@npm:^1.1.0":
+"xache@npm:^1.0.0, xache@npm:^1.1.0":
   version: 1.1.0
   resolution: "xache@npm:1.1.0"
   checksum: 0027070f52fed87312a9284818b07637543321fde95227a8d49147e0910265780f8b429b5906496100cb23491455535285805ef8c9e09ed60c237082e623e0d8

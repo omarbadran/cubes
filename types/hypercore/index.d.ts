@@ -1,6 +1,7 @@
 declare module 'hypercore' {
   type EventEmitter = import('events').EventEmitter;
   type NoiseSecretStream = import('@hyperswarm/secret-stream');
+  import type { Duplex } from 'stream';
 
   declare interface HypercorePeer {
     key: Buffer;
@@ -86,7 +87,10 @@ declare module 'hypercore' {
     closing: Promise<void>;
     core?: InnerHypercore;
 
-    static createProtocolStream(isInitiator: boolean, opts?: any): NoiseSecretStream;
+    static createProtocolStream(
+      isInitiatorOrStream: boolean | Duplex,
+      opts?: any
+    ): NoiseSecretStream;
 
     constructor(storage: any, key?: Buffer, opts?: HypercoreConstructorOpts);
     session(opts?: any): Hypercore;
@@ -110,7 +114,10 @@ declare module 'hypercore' {
     download(range: HypercoreRangeOpts): HypercoreRangeResult;
     truncate(newLength = 0, fork = -1): Promise<void>;
     append(block: any): Promise<any>;
-    registerExtension(name: string, handlers: HypercoreExtensionHandlers): HypercoreExtension;
+    registerExtension(
+      name: string,
+      handlers: HypercoreExtensionHandlers
+    ): HypercoreExtension;
     sign(signable: Buffer): Buffer;
     on(evt: string, handler: Function);
   }

@@ -158,7 +158,10 @@ export default class Database {
    * @returns True on success.
    * @public
    */
-  async update(id: string, changes: (document: Document) => Document): Promise<boolean> {
+  async update(
+    id: string,
+    changes: (document: Document) => Document
+  ): Promise<boolean> {
     let exists = await this.documents.get(id);
 
     if (!exists) {
@@ -339,7 +342,10 @@ export default class Database {
    * @returns single and/or multi keys depending on value type.
    * @private
    */
-  private createIndexKeys(id: string, value: any): { single: string; multi: Array<string> } {
+  private createIndexKeys(
+    id: string,
+    value: any
+  ): { single: string; multi: Array<string> } {
     let multi: Array<string> = [];
     let append = this.sep + id;
 
